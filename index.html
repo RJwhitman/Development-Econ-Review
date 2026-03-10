@@ -1,0 +1,2933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dev Econ Study Guide — Topics 1-22</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}], throwOnError:false});"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-wrapper">
+
+<header>
+  <h1>Development Economics</h1>
+  <span>Topics 1 - 22 · Exam Review</span>
+</header>
+
+<div class="mode-bar">
+  <button class="mode-btn active" onclick="setMode('overview')">Overview</button>
+  <button class="mode-btn" onclick="setMode('notes')">Study Notes</button>
+  <button class="mode-btn" onclick="setMode('flashcards')">Flashcards</button>
+  <button class="mode-btn" onclick="setMode('quiz')">Quiz</button>
+</div>
+
+<div class="topic-strip" id="topic-strip" style="display:none;">
+  <button class="topic-chip active" onclick="setTopic('all')">All Topics</button>
+  <button class="topic-chip" onclick="setTopic(1)">T1 · Introduction</button>
+  <button class="topic-chip" onclick="setTopic(2)">T2 · Defining Dev.</button>
+  <button class="topic-chip" onclick="setTopic(3)">T3 · Comparing Countries</button>
+  <button class="topic-chip" onclick="setTopic(4)">T4 · Characteristics</button>
+  <button class="topic-chip" onclick="setTopic(5)">T5 · Classic Models</button>
+  <button class="topic-chip" onclick="setTopic(6)">T6 · Lewis Model</button>
+  <button class="topic-chip" onclick="setTopic(7)">T7 · Neoclassical</button>
+  <button class="topic-chip" onclick="setTopic(8)">T8 · Endogenous</button>
+  <button class="topic-chip" onclick="setTopic(9)">T9 · Coordination</button>
+  <button class="topic-chip" onclick="setTopic(10)">T10 · Big Push</button>
+  <button class="topic-chip" onclick="setTopic(11)">T11 · O-Ring</button>
+  <button class="topic-chip" onclick="setTopic(12)">T12 · Population</button>
+  <button class="topic-chip" onclick="setTopic(13)">T13 · Inequality</button>
+  <button class="topic-chip" onclick="setTopic(14)">T14 · Poverty</button>
+  <button class="topic-chip" onclick="setTopic(15)">T15 · Measure Props</button>
+  <button class="topic-chip" onclick="setTopic(16)">T16 · Urbanization I</button>
+  <button class="topic-chip" onclick="setTopic(17)">T17 · Urbanization II</button>
+  <button class="topic-chip" onclick="setTopic(18)">T18 · Environment</button>
+  <button class="topic-chip" onclick="setTopic(19)">T19 · Environment II</button>
+  <button class="topic-chip" onclick="setTopic(20)">T20 · Gender</button>
+  <button class="topic-chip" onclick="setTopic(21)">T21 · Agriculture I</button>
+  <button class="topic-chip" onclick="setTopic(22)">T22 · Agriculture II</button>
+</div>
+
+<main>
+
+<!-- ===== OVERVIEW ===== -->
+<div id="overview-view">
+  <div class="section-title">Topics at a Glance</div>
+  <div class="section-subtitle">Click any card to jump to study notes</div>
+  <div class="overview-grid">
+    <div class="topic-card" data-t="1" onclick="jumpToNotes(1)">
+      <div class="topic-num">Topic 1</div>
+      <div class="topic-name">Introduction</div>
+      <ul class="topic-bullets">
+        <li>What is development economics?</li>
+        <li>Economic differences between countries</li>
+        <li>GNI per capita; life expectancy gaps</li>
+        <li>Themes: geographic, poverty, policy</li>
+        <li>History of growth & industrialisation</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="2" onclick="jumpToNotes(2)">
+      <div class="topic-num">Topic 2</div>
+      <div class="topic-name">Defining Development</div>
+      <ul class="topic-bullets">
+        <li>Traditional vs modern views</li>
+        <li>Happiness Index (Layard)</li>
+        <li>Millennium / Sustainable Dev. Goals</li>
+        <li>Sen's Capability Approach</li>
+        <li>Access → Functioning → Capability</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="3" onclick="jumpToNotes(3)">
+      <div class="topic-num">Topic 3</div>
+      <div class="topic-name">Comparing Countries</div>
+      <ul class="topic-bullets">
+        <li>GDP vs GNI; PPP adjustments</li>
+        <li>Three goals: current, intertemporal, cross-country</li>
+        <li>Child mortality measurement</li>
+        <li>HDI formula (geometric mean)</li>
+        <li>World Bank / UNDP country classification</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="4" onclick="jumpToNotes(4)">
+      <div class="topic-num">Topic 4</div>
+      <div class="topic-name">Characteristics of Dev. Countries</div>
+      <ul class="topic-bullets">
+        <li>Ten shared characteristics</li>
+        <li>Weak institutions; colonial legacy</li>
+        <li>Adverse geography; social fractionalization</li>
+        <li>Convergence: absolute, relative, pop-weighted</li>
+        <li>Conditional, world-as-one, sectoral convergence</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="5" onclick="jumpToNotes(5)">
+      <div class="topic-num">Topic 5</div>
+      <div class="topic-name">Classic Growth Models</div>
+      <ul class="topic-bullets">
+        <li>Production function: Y = f(K,L)</li>
+        <li>Capital accumulation, pop growth, tech progress</li>
+        <li>Rostow's Stages of Growth</li>
+        <li>Harrod-Domar model: g = s/c − δ</li>
+        <li>Neutral vs factor-saving vs factor-augmenting tech</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="6" onclick="jumpToNotes(6)">
+      <div class="topic-num">Topic 6</div>
+      <div class="topic-name">Lewis Two-Sector Model</div>
+      <ul class="topic-bullets">
+        <li>Agricultural sector: MPL=0, wages=APL</li>
+        <li>Manufacturing: competitive, wages=MPL</li>
+        <li>Migration → capital deepening cycle</li>
+        <li>Lewis turning point & self-sustaining growth</li>
+        <li>Limitations: labor saving tech, urban unemployment</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="7" onclick="jumpToNotes(7)">
+      <div class="topic-num">Topic 7</div>
+      <div class="topic-name">Neoclassical Models</div>
+      <ul class="topic-bullets">
+        <li>Neoclassical Counter-Revolution</li>
+        <li>Solow Growth Model</li>
+        <li>Equilibrium & stable steady state</li>
+        <li>Solow Residual / TFP</li>
+        <li>Limits of self-sustaining growth</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="8" onclick="jumpToNotes(8)">
+      <div class="topic-num">Topic 8</div>
+      <div class="topic-name">Endogenous Growth</div>
+      <ul class="topic-bullets">
+        <li>Endogenous vs exogenous variables</li>
+        <li>Romer model & increasing returns</li>
+        <li>Spillovers / learning by doing</li>
+        <li>Long-run growth equation</li>
+        <li>FDI & convergence predictions</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="9" onclick="jumpToNotes(9)">
+      <div class="topic-num">Topic 9</div>
+      <div class="topic-name">Coordination Failure</div>
+      <ul class="topic-bullets">
+        <li>Nash Equilibrium</li>
+        <li>Dominant strategy equilibrium</li>
+        <li>Kerala fish markets example</li>
+        <li>Multiple equilibria model</li>
+        <li>Stable vs unstable equilibria</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="10" onclick="jumpToNotes(10)">
+      <div class="topic-num">Topic 10</div>
+      <div class="topic-name">Big Push Model</div>
+      <ul class="topic-bullets">
+        <li>Poverty trap concept</li>
+        <li>Traditional vs modern manufacturing</li>
+        <li>Three wage scenarios (W1/W2/W3)</li>
+        <li>Pecuniary externalities</li>
+        <li>Policy implications</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="11" onclick="jumpToNotes(11)">
+      <div class="topic-num">Topic 11</div>
+      <div class="topic-name">O-Ring Theory</div>
+      <ul class="topic-bullets">
+        <li>O-Ring production function</li>
+        <li>Extreme complementarities</li>
+        <li>Assortative matching</li>
+        <li>Income inequality implications</li>
+        <li>Poverty traps in production</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="12" onclick="jumpToNotes(12)">
+      <div class="topic-num">Topic 12</div>
+      <div class="topic-name">Population</div>
+      <ul class="topic-bullets">
+        <li>World population facts & trends</li>
+        <li>Birth/death rates; TFR</li>
+        <li>Population pyramids</li>
+        <li>Demographic transition</li>
+        <li>Malthusian poverty trap</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="13" onclick="jumpToNotes(13)">
+      <div class="topic-num">Topic 13</div>
+      <div class="topic-name">Inequality</div>
+      <ul class="topic-bullets">
+        <li>Why inequality matters</li>
+        <li>Kuznets Curve (inverted-U)</li>
+        <li>Measuring inequality</li>
+        <li>Kuznets Ratio = top20/bot40</li>
+        <li>Gini Coefficient & Lorenz Curve</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="14" onclick="jumpToNotes(14)">
+      <div class="topic-num">Topic 14</div>
+      <div class="topic-name">Poverty</div>
+      <ul class="topic-bullets">
+        <li>Poverty lines & Engel's Law</li>
+        <li>Headcount measures (H, HI)</li>
+        <li>Poverty gap measures (TPG, APG…)</li>
+        <li>Foster-Greer-Thorbecke (FGT) Index</li>
+        <li>Global poverty facts</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="15" onclick="jumpToNotes(15)">
+      <div class="topic-num">Topic 15</div>
+      <div class="topic-name">Measure Properties</div>
+      <ul class="topic-bullets">
+        <li>Inconsistency problem & Lorenz crossings</li>
+        <li>4 inequality properties (Anonymity…Transfer)</li>
+        <li>Kuznet's Ratio vs Gini on transfer principle</li>
+        <li>4 poverty properties (Monotonicity…Distrib.)</li>
+        <li>Multidimensional poverty index</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="16" onclick="jumpToNotes(16)">
+      <div class="topic-num">Topic 16</div>
+      <div class="topic-name">Urbanization I</div>
+      <ul class="topic-bullets">
+        <li>Lewis Two-Sector limitations</li>
+        <li>Harris-Todaro migration model</li>
+        <li>Urban unemployment & expected wages</li>
+        <li>Equilibrium condition</li>
+        <li>Counter-intuitive implications</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="17" onclick="jumpToNotes(17)">
+      <div class="topic-num">Topic 17</div>
+      <div class="topic-name">Urbanization II</div>
+      <ul class="topic-bullets">
+        <li>Agglomeration economies</li>
+        <li>Limits to urban scale (congestion)</li>
+        <li>Urban giantism paradox</li>
+        <li>Urban slums: causes & UN definition</li>
+        <li>Informal sector (30-70% urban jobs)</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="18" onclick="jumpToNotes(18)">
+      <div class="topic-num">Topic 18</div>
+      <div class="topic-name">Environment I</div>
+      <ul class="topic-bullets">
+        <li>Perfect property rights (4 criteria)</li>
+        <li>Rivalrous vs non-rivalrous goods</li>
+        <li>Tragedy of the Commons</li>
+        <li>Public goods & free rider problem</li>
+        <li>Optimal vs private provision</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="19" onclick="jumpToNotes(19)">
+      <div class="topic-num">Topic 19</div>
+      <div class="topic-name">Environment II</div>
+      <ul class="topic-bullets">
+        <li>Particulate matter (PM2.5 / PM10)</li>
+        <li>Global warming: LICs uniquely vulnerable</li>
+        <li>Water pollution & access crisis</li>
+        <li>Slum environmental conditions</li>
+        <li>Policy: requires developed + developing action</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="20" onclick="jumpToNotes(20)">
+      <div class="topic-num">Topic 20</div>
+      <div class="topic-name">Gender & Sex Ratios</div>
+      <ul class="topic-bullets">
+        <li>Evidence on gender inequality</li>
+        <li>"Missing Women" (Amartya Sen)</li>
+        <li>Fischer's Principle: 1:1 equilibrium</li>
+        <li>Missing women calculation: $f_a/f_e = r_e/r_a$</li>
+        <li>Son preference causes & consequences</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="21" onclick="jumpToNotes(21)">
+      <div class="topic-num">Topic 21</div>
+      <div class="topic-name">Agriculture I</div>
+      <ul class="topic-bullets">
+        <li>2 billion in farming; 2/3 poor are rural</li>
+        <li>Structural transformation (Timmer 4 stages)</li>
+        <li>Lewis model revisited for agriculture</li>
+        <li>3 steps: subsistence → transition → commercial</li>
+        <li>Ag share of GDP falls with development</li>
+      </ul>
+    </div>
+    <div class="topic-card" data-t="22" onclick="jumpToNotes(22)">
+      <div class="topic-num">Topic 22</div>
+      <div class="topic-name">Agriculture II</div>
+      <ul class="topic-bullets">
+        <li>Agricultural productivity gaps</li>
+        <li>Technology adoption barriers & poverty trap</li>
+        <li>Crop insurance & moral hazard</li>
+        <li>Green Revolution: HYV wheat & rice</li>
+        <li>Borlaug (Nobel Peace Prize)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NOTES ===== -->
+<div id="notes-view" style="display:none;">
+
+  <!-- T1 -->
+  <div class="notes-container" id="notes-1">
+    <div class="section-title">Topic 1 · Introduction to Development Economics</div>
+    <div class="section-subtitle">What is Development? · Global Inequality Facts · Themes</div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Definition</span>
+      <h3>What is Development Economics?</h3>
+      <p>Development economics seeks to understand the diverse economic and social conditions that determine the wellbeing of individuals around the globe — and what can be done to improve them. Key themes:</p>
+      <ul>
+        <li><strong>Geographic:</strong> Applying modern economic techniques to low- and middle-income countries.</li>
+        <li><strong>Non-Western:</strong> Understanding institutions, family structures, social norms and preferences that don't exist in HICs.</li>
+        <li><strong>Macro/Growth:</strong> Differences in macro performance between countries and over time.</li>
+        <li><strong>Poverty:</strong> Why are some people poor? Why is there inequality? Subject-based, not geography-based — includes the poor in HICs too.</li>
+        <li><strong>Policy Orientation:</strong> Research is motivated by a desire to improve outcomes — more prominent here than in any other field.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Facts</span>
+      <h3>Global Income Inequality — Key Facts</h3>
+      <ul>
+        <li>The ratio of per capita income in rich vs poor countries was <strong>1:3</strong> at the start of industrialisation; it is now roughly <strong>1:100</strong>.</li>
+        <li>Top per capita GNI (PPP, 2021): Singapore $102,450, Norway $82,840, US $70,480.</li>
+        <li>Bottom: Burundi $780, Central African Republic $980, DRC $1,110.</li>
+        <li>Poverty is geographically concentrated — heavily in the tropical belt, especially Sub-Saharan Africa. Latin America is relatively more developed; Asia and North Africa fall in between.</li>
+        <li>Life expectancy gap: Top countries (Hong Kong, Japan) ~85 years; bottom (Chad, Nigeria) ~53 years.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block example-block">
+      <span class="tag tag-exam">Exam Focus</span>
+      <h3>Why Western Countries Are the Unusual Ones</h3>
+      <p>The original framing — "Why are some countries poor?" — is now considered paternalistic. The modern reframing asks: <em>"What is the source of the diverse set of economic and social conditions that determine the wellbeing of individuals around the globe?"</em> This treats Western development as one outcome among many, not as the universal norm to which all countries must aspire.</p>
+    </div>
+  </div>
+
+  <!-- T2 -->
+  <div class="notes-container" id="notes-2">
+    <div class="section-title">Topic 2 · Defining Development</div>
+    <div class="section-subtitle">Traditional vs Modern Views · Happiness · MDGs · Sen's Capabilities</div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Concept</span>
+      <h3>Traditional vs Modern Views of Development</h3>
+      <ul>
+        <li><strong>Traditional view:</strong> Almost exclusively focused on per capita income (GNP/GDP). Set the right macro conditions (capital stock, monetary policy, fiscal policy, trade) and all will benefit. Emerged in 1950s-60s.</li>
+        <li><strong>Modern view:</strong> Per capita income is still extremely important but too narrow. Also focus on unemployment, inequality, number of poor households, and human capital. Emerged after the 1970s-80s, when "fixing" policies raised GDP but failed to reduce poverty at the individual level.</li>
+        <li>Modern approaches are <strong>multidimensional</strong> — there is no single objective function to maximise.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Model</span>
+      <h3>Happiness Index (Layard)</h3>
+      <ul>
+        <li>Unidimensional measure of subjective well-being: "Taking all things together, how happy are you?" (0-10 scale).</li>
+        <li>Research shows it correlates well with macro statistics, health, etc.</li>
+        <li>Key findings: Below ~$15k GNI/capita, wealth strongly predicts happiness. Above $15k, the slope flattens — money does less. The seven determinants of happiness (at individual level): family relationships, financial situation, work, community/friends, health, personal freedom, personal values.</li>
+        <li>Bhutan actually adopted Gross National Happiness (GNH) as an official goal.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Concept</span>
+      <h3>Millennium & Sustainable Development Goals</h3>
+      <ul>
+        <li><strong>MDGs</strong> (2000): Adopted by 189 UN members. Eight goals (eradicate poverty, universal primary education, gender equality, child mortality, maternal health, HIV/AIDS, environment, global partnership). Each with measurable criteria and a 2015 deadline — a dramatic departure from prior frameworks.</li>
+        <li>Criticisms: Not ambitious enough, or unachievable. No post-2015 vision. Lacked prioritisation.</li>
+        <li><strong>SDGs</strong> (2016): 17 goals, target 2030. More complex, revised targets, but harder to communicate.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Concept</span>
+      <h3>Sen's Capability Approach</h3>
+      <p>Developed by Nobel laureate Amartya Sen. Moves beyond income and resources to focus on what people can actually do and be.</p>
+      <ul>
+        <li><strong>Access:</strong> Ability to access resources (e.g., having a bicycle).</li>
+        <li><strong>Functioning:</strong> Ability to make use of resources (being able to ride it). Depends on a combination of resources, social environment, and political environment.</li>
+        <li><strong>Capability:</strong> Ability to choose over multiple functionings — true freedom.</li>
+        <li><strong>Development = expanding capabilities</strong>: Expanding access to resources (income), services (education, healthcare), and political freedoms. "Development as Freedom."</li>
+      </ul>
+      <div class="formula-box">
+        Access → Functioning → Capability<br>
+        Resources → Using them → Choosing among uses
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted);margin-top:8px;"><strong>Critiques:</strong> Agency competence (do people always choose in their own interest?), community constraints (Amish, Hasidic communities restrict individual choices but may bind communities), and natural vs constructed preferences.</p>
+    </div>
+
+    <div class="concept-block example-block">
+      <span class="tag tag-exam">Worked Example</span>
+      <h3>Comparing the Four Approaches to Development</h3>
+      <div class="formula-box" style="font-size:0.8rem;line-height:2.2;">
+        <div style="display:grid;grid-template-columns:1fr 2fr;gap:4px 20px;">
+          <span style="color:var(--accent)">Approach</span><span style="color:var(--accent)">Key emphasis</span>
+          <span>Traditional/Growth</span><span>Per capita GDP/GNI — get the macro right</span>
+          <span>Multidimensional</span><span>Multiple well-being dimensions simultaneously</span>
+          <span>Happiness Index</span><span>Subjective well-being; money has diminishing returns</span>
+          <span>Sen's Capability</span><span>Freedom to choose among functionings</span>
+        </div>
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted);margin-top:8px;">No single approach is complete. Each captures something important: economic growth matters, but so does subjective wellbeing, so does freedom, so does the distribution of income.</p>
+    </div>
+  </div>
+
+  <!-- T3 -->
+  <div class="notes-container" id="notes-3">
+    <div class="section-title">Topic 3 · Comparing Countries</div>
+    <div class="section-subtitle">GDP/GNI · PPP · HDI · Country Classification</div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Concept</span>
+      <h3>Three Goals of Development Measurement</h3>
+      <ul>
+        <li><strong>Describe current conditions:</strong> Accurate and representative of what is actually happening now.</li>
+        <li><strong>Intertemporal comparison:</strong> Ensure the same things are measured at different points in time — requires deflating to a base year to remove inflation.</li>
+        <li><strong>Cross-country comparison:</strong> Ensure the same things are measured in different countries — requires currency conversion and PPP adjustment.</li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--muted);">These are nested: you must accurately describe current conditions before you can make valid intertemporal comparisons, which are in turn necessary for valid cross-country comparisons.</p>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Concept</span>
+      <h3>GDP vs GNI, and PPP Adjustment</h3>
+      <ul>
+        <li><strong>GDP</strong> (Gross Domestic Product): Total value added within a country's borders, regardless of who owns the factors.</li>
+        <li><strong>GNI</strong> (Gross National Income): Total income earned by a country's residents, regardless of where earned. GNI = GDP + net factor income from abroad.</li>
+        <li><strong>PPP adjustment:</strong> Converts currencies to a common purchasing power. A basket of identical goods is priced in each country; currencies are adjusted so the basket costs the same everywhere. Needed because exchange rates don't reflect actual purchasing power (e.g., a haircut is far cheaper in Vietnam than the US).</li>
+        <li><strong>4-step standardisation:</strong> (1) Measure total income in local currency. (2) Deflate to base year (remove inflation). (3) Convert to standard currency (USD). (4) Apply PPP adjustment.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Formula</span>
+      <h3>Human Development Index (HDI)</h3>
+      <p>UNDP calculates annually. Combines three dimensions — health, education, and standard of living.</p>
+      <div class="formula-box">
+        Each sub-index: $$I = \frac{\text{actual} - \text{minimum}}{\text{maximum} - \text{minimum}}$$
+        New HDI (2010-present):
+        $$\text{HDI} = \left(I_{\text{Life}} \times I_{\text{Education}} \times I_{\text{Income}}\right)^{1/3}$$
+        Old HDI (1990-2009):
+        $$\text{HDI} = \frac{1}{3}I_{\text{Life}} + \frac{1}{3}I_{\text{Education}} + \frac{1}{3}I_{\text{Income}}$$
+      </div>
+      <ul>
+        <li>Health: Life expectancy at birth.</li>
+        <li>Education: Geometric mean of average years of schooling and expected years of schooling.</li>
+        <li>Standard of living: Per capita GNI (log-transformed).</li>
+        <li><strong>Criticisms:</strong> Sub-indexes are highly correlated with GNI, limiting multidimensionality. Easy to criticise for omissions (environment, freedom). Substitution between dimensions is arbitrary.</li>
+        <li>Key difference old→new: Geometric mean penalises countries with extreme imbalances — you can't compensate a terrible health score with a great income score.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Exam Focus</span>
+      <h3>Country Classification Systems</h3>
+      <ul>
+        <li><strong>World Bank (GNI per capita):</strong> LIC ≤ $1,025 | LMC $1,026-$4,035 | UMC $4,036-$12,475 | HIC ≥ $12,476.</li>
+        <li><strong>UNDP (HDI):</strong> Low &lt;0.550 | Medium 0.550-0.699 | High 0.700-0.799 | Very High ≥0.800.</li>
+        <li><strong>UN Least Developed Countries (LDCs):</strong> Must meet three criteria — low income, low human capital, high economic vulnerability. Updated every three years by the Committee for Development Policy.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>HDI Calculator — Geometric vs Arithmetic Mean</h3>
+      <p>Set the three sub-index scores and compare how the old (arithmetic) and new (geometric) HDI differ. The geometric mean penalises imbalanced scores more heavily.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-hdi" height="220"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl">
+          <label>Health $I_{\text{Life}}$</label>
+          <input type="range" id="i-life" min="0" max="1" step="0.01" value="0.7" oninput="updateHDI()">
+          <span class="val" id="i-life-val">0.70</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Education $I_{\text{Edu}}$</label>
+          <input type="range" id="i-edu" min="0" max="1" step="0.01" value="0.6" oninput="updateHDI()">
+          <span class="val" id="i-edu-val">0.60</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Income $I_{\text{Inc}}$</label>
+          <input type="range" id="i-inc" min="0" max="1" step="0.01" value="0.5" oninput="updateHDI()">
+          <span class="val" id="i-inc-val">0.50</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="graph-stat">New HDI (geometric) = <span id="hdi-new-val">—</span></span>
+        <span class="graph-stat">Old HDI (arithmetic) = <span id="hdi-old-val">—</span></span>
+        <span class="graph-stat">Penalty from imbalance = <span id="hdi-diff-val">—</span></span>
+      </div>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof</span>
+      <h3>Why the Geometric Mean Penalises Imbalance (AM-GM Inequality)</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Claim</span>
+        <div class="proof-step-body">For any non-negative $a, b, c$: $\left(\frac{a+b+c}{3}\right) \geq (abc)^{1/3}$, with equality iff $a=b=c$.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">Start with 2-variable AM-GM: $(a-b)^2 \geq 0 \Rightarrow a^2+b^2 \geq 2ab \Rightarrow (a+b)^2 \geq 4ab \Rightarrow \frac{a+b}{2} \geq \sqrt{ab}$.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">Extend to 3 variables using the substitution trick: Let $m = (abc)^{1/3}$. Suppose $a + b + c = 3m$. One can show via repeated application that $a = b = c = m$ is the only point where the arithmetic mean equals the geometric mean. For all other distributions, AM &gt; GM.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Application</span>
+        <div class="proof-step-body">A country with $I_{\text{Life}}=0.9$, $I_{\text{Edu}}=0.9$, $I_{\text{Inc}}=0.1$:
+          <div class="formula-box">
+            Old HDI = $(0.9+0.9+0.1)/3 = 0.633$<br>
+            New HDI = $(0.9 \times 0.9 \times 0.1)^{1/3} = (0.081)^{1/3} \approx 0.433$
+          </div>
+          The geometric mean correctly penalises the catastrophically low income score. The old arithmetic mean masks the imbalance.
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+  </div>
+
+  <!-- T4 -->
+  <div class="notes-container" id="notes-4">
+    <div class="section-title">Topic 4 · Characteristics of Developing Countries</div>
+    <div class="section-subtitle">10 Shared Characteristics · Convergence Types</div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Concept</span>
+      <h3>Ten Shared Characteristics of Developing Countries</h3>
+      <ol style="padding-left:18px;line-height:2.2;font-size:0.85rem;">
+        <li><strong>Low levels of living and productivity</strong> — low per capita income, low output per worker.</li>
+        <li><strong>Low levels of human capital</strong> — high child mortality, low schooling, poor health. Child mortality correlates strongly with maternal education.</li>
+        <li><strong>High levels of inequality and absolute poverty</strong> — more people in extreme poverty; fewer in middle class.</li>
+        <li><strong>High population growth</strong> — high crude birth rates relative to HICs.</li>
+        <li><strong>Social fractionalization</strong> — linguistic, ethnic, and religious divisions that impede collective action (especially in Africa, Middle East).</li>
+        <li><strong>Larger rural populations and fast urbanization</strong> — still majority rural but urbanising rapidly, often faster than job creation.</li>
+        <li><strong>Lower levels of industrialization</strong> — primary sectors (agriculture, extraction) dominate; manufacturing share is small.</li>
+        <li><strong>Adverse geography</strong> — landlocked, tropical disease burden (malaria), N-S continental orientation limiting agricultural diffusion, climate change exposure (Africa, South Asia).</li>
+        <li><strong>Weak institutions and underdeveloped markets</strong> — poor property rights, contract enforcement, limited access to opportunities, elite capture.</li>
+        <li><strong>Colonial legacy and external dependence</strong> — exploitative regimes (Sub-Saharan Africa) left worst institutional quality; intermediate regimes (India, South America) mixed; settler regimes (US, Canada, Australia) did best. "Reversal of fortune": wealthier pre-colonial areas were easier to exploit → post-colonial institutional damage is worse.</li>
+      </ol>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Concept</span>
+      <h3>Types of Convergence</h3>
+      <ul>
+        <li><strong>Absolute convergence:</strong> Per capita income levels are becoming more similar across countries. Requires poorer countries to grow faster AND be close enough to wealthy countries to catch up. The most important type — but hardest to achieve. Evidence is mixed at best.</li>
+        <li><strong>Relative convergence:</strong> Poorer countries grow faster than wealthier ones (a precondition for absolute convergence). Requires negative correlation of growth rate with initial income. Holds within OECD countries; does NOT hold for all developing countries.</li>
+        <li><strong>Population-weighted relative convergence:</strong> Relative convergence weighted by population size — prioritises China and India. Some evidence since 1976, driven largely by China's rapid growth.</li>
+        <li><strong>Conditional convergence:</strong> Convergence conditional on other characteristics (urbanization, institutions, resources). Already seen in Solow model.</li>
+        <li><strong>World-as-one-country convergence:</strong> Estimates income for every person on earth and asks if the global distribution is converging. Very hard to measure.</li>
+        <li><strong>Sectoral convergence:</strong> Convergence in specific sectors. Dani Rodrik finds strong evidence of manufacturing sector convergence — explains manufacturing-led growth in China, India, South America.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Exam Focus</span>
+      <h3>"Developing" Does Not Mean "Behind"</h3>
+      <p>Today's LICs are not simply where today's HICs were 200 years ago. Key differences: colonial legacy damaged institutions; today's LICs operate in a world with existing technologies they can adopt (leap-frogging); comparative income levels are much more extreme; international migration, trade, and scientific knowledge flow in ways impossible during early industrialisation. Britain doubled worker productivity in 60 years; South Korea did it in 12, China in 9.</p>
+    </div>
+  </div>
+
+  <!-- T5 -->
+  <div class="notes-container" id="notes-5">
+    <div class="section-title">Topic 5 · Classic Growth Models</div>
+    <div class="section-subtitle">Production Function · Rostow · Harrod-Domar</div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Formula</span>
+      <h3>Production Function & Components of Growth</h3>
+      <div class="formula-box">
+        $$Y = f(K, L)$$
+        Three determinants of growth: Capital accumulation ($K$), Population growth ($L$), Technological progress ($f(\cdot)$)
+      </div>
+      <ul>
+        <li><strong>Capital accumulation:</strong> All new investment in physical capital, infrastructure, and human capital. Funded by diverting income into savings → investment → future output.</li>
+        <li><strong>Population growth:</strong> Increases labour supply, but at the macro level large population increases can reverse the per-worker gains.</li>
+        <li><strong>Technological progress:</strong> Now considered the most important long-run growth factor. Three types:
+          <ul style="margin-top:6px;">
+            <li><em>Neutral:</em> Higher output with the same input combination (e.g., division of labour). Doesn't change relative marginal products.</li>
+            <li><em>Factor-saving:</em> Allows substitution — either labour-saving (use less labour, more capital: typical in HICs where labour is expensive) or capital-saving (use less capital, more labour: more useful in LICs).</li>
+            <li><em>Factor-augmenting:</em> Increases the marginal product of a specific factor. Labour-augmenting = better education/health. Capital-augmenting = iron replacing bronze.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Model</span>
+      <h3>Rostow's Stages of Growth</h3>
+      <ul>
+        <li>Walter Rostow (UT professor; Special Assistant for National Security to LBJ). Popular in 1950s-60s, strongly influenced by the Marshall Plan.</li>
+        <li><strong>Five stages:</strong> (1) Traditional Society → (2) Pre-conditions for Take-off → (3) Take-off → (4) Drive to Maturity → (5) Age of High Mass Consumption.</li>
+        <li>Mechanism: mustering savings for capital accumulation moves a country through stages.</li>
+        <li>All countries follow the same path (universal); there is only one path (necessary). Heavily criticised for Eurocentrism and oversimplification.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Formula</span>
+      <h3>Harrod-Domar Growth Model</h3>
+      <p>Key mechanism: capital accumulation through savings-driven investment.</p>
+      <div class="formula-box">
+        Production: $Y_t = \frac{1}{c} K_t$ &nbsp;(capital-output ratio $c = K/Y$)<br>
+        Savings: $S_t = s \cdot Y_t$<br>
+        Investment: $I_t = S_t = s \cdot Y_t$<br>
+        Capital accumulation: $\Delta K = I_t - \delta K_t = sY_t - \delta K_t$<br><br>
+        $$\boxed{g = \frac{\Delta Y}{Y} = \frac{s}{c} - \delta}$$
+        where $s$ = savings rate, $c$ = capital-output ratio (ICOR), $\delta$ = depreciation rate
+      </div>
+      <ul>
+        <li>To grow faster: raise $s$ or reduce $c$ (use capital more efficiently).</li>
+        <li>Savings gap: if domestic savings are insufficient, foreign aid or FDI fills the gap: $\Delta Y/Y = (s + f)/c - \delta$ where $f$ = foreign capital inflow as share of GDP.</li>
+        <li><strong>Limitations:</strong> Assumes fixed $c$ (Leontief production function — no substitution). In practice, $c$ varies and savings don't automatically translate into investment. Doesn't account for technology or labour.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>Harrod-Domar: Growth Rate vs Savings Rate</h3>
+      <p>The model predicts a linear relationship between $s$ and $g$. Adjust the capital-output ratio $c$ and depreciation $\delta$ to see how the required savings rate to achieve a target growth rate changes.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-hd" height="230"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl">
+          <label>Capital-output ratio $c$</label>
+          <input type="range" id="c-hd" min="1" max="6" step="0.1" value="3" oninput="updateHD()">
+          <span class="val" id="c-hd-val">3.0</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Depreciation $\delta$</label>
+          <input type="range" id="d-hd" min="0.02" max="0.15" step="0.01" value="0.05" oninput="updateHD()">
+          <span class="val" id="d-hd-val">0.05</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Foreign inflow $f$</label>
+          <input type="range" id="f-hd" min="0" max="0.1" step="0.005" value="0" oninput="updateHD()">
+          <span class="val" id="f-hd-val">0.000</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="graph-stat">g at s=0.15: <span id="g-hd-val">—</span></span>
+        <span class="graph-stat">s needed for g=5%: <span id="s-req-val">—</span></span>
+      </div>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof</span>
+      <h3>Deriving $g = s/c - \delta$ in Harrod-Domar</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">From the fixed capital-output ratio: $Y_t = K_t / c$, so $\Delta Y_t = \Delta K_t / c$.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">Capital accumulation: $\Delta K_t = I_t - \delta K_t = S_t - \delta K_t = sY_t - \delta K_t$.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 3</span>
+        <div class="proof-step-body">Divide $\Delta K_t$ by $c$ to get $\Delta Y_t$:
+          <div class="formula-box">$$\Delta Y_t = \frac{sY_t - \delta K_t}{c} = \frac{sY_t}{c} - \frac{\delta K_t}{c} = \frac{s}{c}Y_t - \delta Y_t$$</div>
+          (using $K_t = cY_t$ in the last step)
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 4</span>
+        <div class="proof-step-body">Divide both sides by $Y_t$:
+          <div class="formula-box">$$g = \frac{\Delta Y_t}{Y_t} = \frac{s}{c} - \delta$$</div>
+          Growth rate is linear in the savings rate, inversely proportional to the capital-output ratio (ICOR), and reduced by depreciation.
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+  </div>
+
+  <!-- T6 -->
+  <div class="notes-container" id="notes-6">
+    <div class="section-title">Topic 6 · Lewis Two-Sector Model</div>
+    <div class="section-subtitle">Agricultural vs Manufacturing · Migration Dynamics · Turning Point · Limitations</div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Background</span>
+      <h3>Structural Change Models</h3>
+      <p>Lewis (1954, Nobel 1979) developed the first formal structural-change model. These models organise the economy into sectors and study how the composition of activity changes with development.</p>
+      <ul>
+        <li>Two sectors: <strong>Rural/Agricultural</strong> and <strong>Urban/Manufacturing</strong>.</li>
+        <li>Economy is closed (no trade, no foreign investment).</li>
+        <li>Labour moves freely between sectors.</li>
+        <li>Further developed by Fei and Ranis.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Model</span>
+      <h3>Agricultural Sector Assumptions</h3>
+      <ul>
+        <li>Large surplus of labour — so large that <strong>MPL = 0</strong> (adding or removing a worker doesn't change output).</li>
+        <li>No competitive labour market. Wages set at the <strong>average product of labour</strong>: $w_A = Y_A / L_A$ (food produced and shared equally).</li>
+        <li>Capital stock is fixed; no investment incentive (MPL = 0 means no return to hiring more workers).</li>
+        <li>Migration to urban areas does <em>not</em> affect the agricultural wage (surplus labour cushion).</li>
+      </ul>
+      <div class="formula-box">
+        $$w_A = \frac{Y_A}{L_A} = APL_A \qquad \text{(subsistence wage)}$$
+      </div>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Model</span>
+      <h3>Manufacturing Sector Assumptions</h3>
+      <ul>
+        <li>Competitive labour market: wages equal MPL. No unemployment (anyone can find work at the prevailing wage).</li>
+        <li>Capital is <strong>labour-augmenting</strong>: increasing capital raises MPL and thus the competitive wage.</li>
+        <li><strong>All profits are reinvested</strong> into capital — firms grow by expanding capital and hiring more workers.</li>
+      </ul>
+      <div class="formula-box">
+        $$w_M = MPL_M(K) \qquad \text{(competitive wage)}$$
+        As $K \uparrow$: $MPL_M \uparrow \Rightarrow w_M \uparrow$
+      </div>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Model</span>
+      <h3>Model Dynamics — The Two-Stage Cycle</h3>
+      <p>The model proceeds in periods, each with two stages:</p>
+      <ol style="line-height:2.2;font-size:0.85rem;padding-left:18px;">
+        <li><strong>Migration Stage:</strong> $w_M > w_A$ → labour moves from agriculture to manufacturing, pushing $w_M$ down until $w_M = w_A + \text{urban premium}$.</li>
+        <li><strong>Production/Investment Stage:</strong> Additional labour raises manufacturing output → profits → capital investment → higher MPL → higher $w_M$ above $w_A$ → triggers next migration stage.</li>
+      </ol>
+      <p style="font-size:0.82rem;color:var(--muted);margin-top:8px;">This self-reinforcing cycle continues as long as the agricultural surplus labour cushion holds. Growth is endogenous — savings and investment drive it without exogenous technology.</p>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Key Concept</span>
+      <h3>Lewis Turning Point & Self-Sustaining Growth</h3>
+      <ul>
+        <li><strong>Lewis Turning Point:</strong> Eventually the agricultural surplus labour is exhausted. Further migration now raises agricultural wages (MPL > 0 as labour becomes scarce). The unlimited labour supply assumption breaks down.</li>
+        <li>After the turning point: further labour migration requires higher wages → manufacturing profits fall → slower capital accumulation. Labour market becomes fully competitive across sectors.</li>
+        <li><strong>Declining MPK:</strong> Capital deepening raises output but by ever-smaller amounts — $f''(K) < 0$ — eventually slowing growth. This is the other brake on self-sustaining growth.</li>
+        <li>China's economy is often cited as a modern example of the Lewis process.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Limitations</span>
+      <h3>Limitations of the Lewis Model</h3>
+      <ul>
+        <li><strong>Agricultural sector:</strong> Surplus labour is often cyclical (seasonal), not permanent. Rural wages do tend to be set by MPL, not APL. MPK in agriculture is positive — better seeds, equipment, and techniques raise output.</li>
+        <li><strong>Manufacturing sector:</strong> Capital need not be labour-augmenting. If firms adopt labour-saving technology, profits flow to capital owners rather than workers — worsening inequality without creating employment.</li>
+        <li><strong>Urban unemployment:</strong> Lewis assumes anyone can find work in manufacturing. In reality, migrants often can't — this motivates Harris-Todaro (Topic 16).</li>
+        <li><strong>Underlying insight survives:</strong> As long as (1) return to capital is higher in manufacturing, and (2) capital investments are neutral or labour-augmenting, the core dynamic of capital-driven migration holds.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>Lewis Model — Manufacturing Wage vs Capital Stock</h3>
+      <p>As capital accumulates (period by period), the manufacturing MPL rises, pulling workers from agriculture. The orange dashed line is the fixed agricultural wage floor. Migration happens when $w_M > w_A$.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-lewis" height="230"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl">
+          <label>Agri. wage floor $w_A$</label>
+          <input type="range" id="wa-lewis" min="0.2" max="1.5" step="0.05" value="0.6" oninput="updateLewis()">
+          <span class="val" id="wa-lewis-val">0.60</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Labour in Mfg $L_M$</label>
+          <input type="range" id="lm-lewis" min="5" max="60" step="1" value="20" oninput="updateLewis()">
+          <span class="val" id="lm-lewis-val">20</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Savings rate $s$</label>
+          <input type="range" id="s-lewis" min="0.05" max="0.5" step="0.01" value="0.25" oninput="updateLewis()">
+          <span class="val" id="s-lewis-val">0.25</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="graph-stat">Current $w_M$ = <span id="wm-lewis-val-out">—</span></span>
+        <span class="graph-stat">Migration pressure: <span id="migration-pressure">—</span></span>
+      </div>
+    </div>
+
+    <div class="concept-block example-block">
+      <span class="tag tag-exam">Worked Example</span>
+      <h3>Lewis Cycle — One Full Period</h3>
+      <p>Initial state: $K=100$, $L_M=20$, $Y_M = K^{0.3}L_M^{0.7} = 100^{0.3} \cdot 20^{0.7}$. Agricultural wage $w_A = 2$. Savings rate $s=0.3$, depreciation $\delta=0.05$.</p>
+      <div class="formula-box">
+        $Y_M \approx 3.98 \times 8.10 \approx 32.2$ &nbsp;(manufacturing output)<br>
+        $MPL_M = 0.7 \cdot Y_M / L_M = 0.7 \times 32.2/20 \approx 1.13 < w_A = 2$ → no migration yet<br><br>
+        Profit = $Y_M - w_A \cdot L_M = 32.2 - 2 \times 20 = -7.8$ → not yet profitable<br><br>
+        <strong>After capital doubles to K=200:</strong><br>
+        $Y_M \approx 4.74 \times 8.10 \approx 38.4$<br>
+        $MPL_M = 0.7 \times 38.4/20 \approx 1.34$ &nbsp; still below $w_A$<br><br>
+        <strong>As K grows further, MPL rises until $MPL_M > w_A$</strong> → migration begins → more $L_M$ → more output → more profit → more investment → self-reinforcing cycle.
+      </div>
+    </div>
+  </div>
+
+  <!-- T7 -->
+  <div class="notes-container active" id="notes-7">
+    <div class="section-title">Topic 7 · Neoclassical Models</div>
+    <div class="section-subtitle">Solow Growth Model · Counter-Revolution · TFP</div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Background</span>
+      <h3>Neoclassical Counter-Revolution</h3>
+      <p>A trend in economic theory in the 1980s-90s emphasizing free-market efficiency. Key beliefs: end price/wage controls, open economies to trade, remove currency controls. The Solow model is the central example of these neoclassical models.</p>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Model</span>
+      <h3>Solow Growth Model — Production Function</h3>
+      <p>Developed by Robert Solow (MIT, published 1956). Models the relationship between investment, capital deepening, and output growth.</p>
+      <div class="formula-box">
+        $$Y = K^\alpha (AL)^{1-\alpha}$$
+        $$y = f(k) = A k^\alpha$$
+        <span style="font-size:0.8rem;color:var(--muted)">where $y = Y/L$, $k = K/L$, $\tilde{A} = A^{1-\alpha}$</span>
+      </div>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Key Equation</span>
+      <h3>Change in Per Capita Capital Stock</h3>
+      <div class="formula-box">
+        $$\Delta k = sf(k) - (\delta + n)k$$
+        <div style="margin-top:10px;font-size:0.82rem;line-height:2;">
+          $\Delta k > 0$ if $sf(k) > (\delta+n)k$ &nbsp;→ capital growing<br>
+          $\Delta k < 0$ if $sf(k) < (\delta+n)k$ &nbsp;→ capital shrinking<br>
+          $\Delta k = 0$ if $sf(k) = (\delta+n)k$ &nbsp;→ equilibrium $k^*$
+        </div>
+      </div>
+      <ul>
+        <li><strong>s</strong> = savings rate; <strong>δ</strong> = depreciation; <strong>n</strong> = population growth</li>
+        <li>Equilibrium k* is a <em>stable</em> equilibrium — the model pulls capital back if disturbed.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof 1</span>
+      <h3>Deriving $\Delta k = sf(k) - (\delta + n)k$ from First Principles</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Given</span>
+        <div class="proof-step-body">The capital accumulation equation in aggregate terms: new capital = investment minus depreciation.
+          <div class="formula-box">$$K_{t+1} = K_t + sY_t - \delta K_t$$</div>
+          Investment equals savings $sY_t$; depreciation erodes at rate $\delta$.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">Divide through by population $L_t$ to convert to per capita terms. Define $k_t = K_t/L_t$ and $y_t = Y_t/L_t$:
+          <div class="formula-box">$$\frac{K_{t+1}}{L_t} = k_t + sf(k_t) - \delta k_t$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">Population grows at rate $n$, so $L_{t+1} = (1+n)L_t$. Write $k_{t+1}$ in terms of $K_{t+1}$ and $L_{t+1}$:
+          <div class="formula-box">$$k_{t+1} = \frac{K_{t+1}}{L_{t+1}} = \frac{K_{t+1}}{(1+n)L_t}$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 3</span>
+        <div class="proof-step-body">Substitute the expression for $K_{t+1}$ from Step 1:
+          <div class="formula-box">$$k_{t+1} = \frac{k_t + sf(k_t) - \delta k_t}{1+n} = \frac{(1-\delta)k_t + sf(k_t)}{1+n}$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 4</span>
+        <div class="proof-step-body">The change in per capita capital is $\Delta k = k_{t+1} - k_t$:
+          <div class="formula-box">$$\Delta k = \frac{(1-\delta)k_t + sf(k_t)}{1+n} - k_t = \frac{sf(k_t) - \delta k_t - nk_t - n\delta k_t}{1+n}$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 5</span>
+        <div class="proof-step-body">Since $n$ and $\delta$ are both small, the cross-term $n\delta k_t \approx 0$ is negligible, and $(1+n) \approx 1$. This gives the standard approximation:
+          <div class="formula-box">$$\boxed{\Delta k \approx sf(k) - (\delta + n)k}$$</div>
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof 2</span>
+      <h3>Closed-Form $k^*$ and Proof of Stability</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Setup</span>
+        <div class="proof-step-body">Use $f(k) = Ak^\alpha$. Set $\Delta k = 0$:
+          <div class="formula-box">$$sAk^\alpha = (\delta+n)k$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">Divide both sides by $k$ (valid since $k > 0$):
+          <div class="formula-box">$$sA k^{\alpha-1} = \delta + n$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">Isolate $k^{\alpha-1}$ then raise both sides to the power $\frac{1}{\alpha-1}$. Since $\alpha < 1$, the exponent $\frac{1}{\alpha-1}$ is negative — flip the fraction:
+          <div class="formula-box">$$k^{\alpha-1} = \frac{\delta+n}{sA} \implies \boxed{k^* = \left(\frac{sA}{\delta+n}\right)^{\!\frac{1}{1-\alpha}}}$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Stability</span>
+        <div class="proof-step-body">Define $\phi(k) = sf(k) - (\delta+n)k$. We need $\phi'(k^*) < 0$ for stability.
+          <div class="formula-box">$$\phi'(k) = sf'(k) - (\delta+n) = s\alpha A k^{\alpha-1} - (\delta+n)$$</div>
+          At $k^*$, we know $sAk^{*\alpha-1} = \delta+n$, so $s\alpha A k^{*\alpha-1} = \alpha(\delta+n)$. Therefore:
+          <div class="formula-box">$$\phi'(k^*) = \alpha(\delta+n) - (\delta+n) = (\alpha-1)(\delta+n)$$</div>
+          Since $0 < \alpha < 1$, we have $\alpha - 1 < 0$ and $\delta+n > 0$, so $\phi'(k^*) < 0$. The equilibrium is <strong>locally stable</strong>.
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Exam Focus</span>
+      <h3>Self-Sustaining Growth — The Key Conclusion</h3>
+      <ul>
+        <li>Increasing savings rate <em>s</em> shifts equilibrium from k* to k*' (higher output) — but this is a <strong>one-time level shift</strong>, not sustained growth.</li>
+        <li>Savings rate is bounded: <em>s &lt; 1</em>, and people need to consume.</li>
+        <li><strong>Conclusion:</strong> Only technological change (not capital accumulation) can produce continuous long-run growth. Very different from Harrod-Domar and Lewis models.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Concept</span>
+      <h3>Solow Residual (Total Factor Productivity)</h3>
+      <ul>
+        <li>Growth is decomposed into: changes in capital, changes in labor, and <em>technological change</em>.</li>
+        <li>The Solow Residual = portion of growth NOT explained by capital or labor = attributed to technology.</li>
+        <li>Also called <strong>Total Factor Productivity (TFP)</strong> — it increases all marginal products equally.</li>
+        <li>Accounts for roughly <strong>50% of economic growth</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Limitations</span>
+      <h3>Limitations of the Solow Model</h3>
+      <ul>
+        <li>Tells us nothing about the <em>determinants</em> of technological change — yet tech explains ~half of growth.</li>
+        <li>Countries with similar technologies often have different residuals.</li>
+        <li>Empirical estimates show economies take <em>decades</em> to reach equilibrium after savings rate changes — raises doubt about whether equilibrium is ever truly reached.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>The Solow Diagram — $sf(k)$ vs $(\delta+n)k$</h3>
+      <p>Drag the sliders to see how the equilibrium $k^*$ shifts. The intersection of the savings curve and depreciation line is the steady state.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-solow" height="260"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl">
+          <label>Savings rate <em>s</em></label>
+          <input type="range" id="s-solow" min="0.05" max="0.6" step="0.01" value="0.3" oninput="updateSolow()">
+          <span class="val" id="s-solow-val">0.30</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Depreciation δ</label>
+          <input type="range" id="d-solow" min="0.02" max="0.15" step="0.01" value="0.05" oninput="updateSolow()">
+          <span class="val" id="d-solow-val">0.05</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Pop. growth <em>n</em></label>
+          <input type="range" id="n-solow" min="0.00" max="0.08" step="0.005" value="0.02" oninput="updateSolow()">
+          <span class="val" id="n-solow-val">0.020</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Capital share α</label>
+          <input type="range" id="a-solow" min="0.2" max="0.8" step="0.05" value="0.5" oninput="updateSolow()">
+          <span class="val" id="a-solow-val">0.50</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="graph-stat">k* = <span id="kstar-val">—</span></span>
+        <span class="graph-stat">y* = f(k*) = <span id="ystar-val">—</span></span>
+        <span class="graph-stat">δ+n = <span id="dn-val">—</span></span>
+      </div>
+    </div>
+
+    <div class="concept-block example-block">
+      <span class="tag tag-exam">Worked Example</span>
+      <h3>Finding $k^*$ Numerically</h3>
+      <p>Suppose $\alpha = 0.5$, $A = 1$, $s = 0.3$, $\delta = 0.05$, $n = 0.02$. Find $k^*$.</p>
+      <p style="margin-top:10px;font-size:0.82rem;color:var(--muted)"><strong>Step 1</strong> — set $\Delta k = 0$:</p>
+      <div class="formula-box">$$sf(k^*) = (\delta + n)k^* \implies s \cdot A(k^*)^\alpha = (\delta+n)k^*$$</div>
+      <p style="font-size:0.82rem;color:var(--muted)"><strong>Step 2</strong> — plug in numbers:</p>
+      <div class="formula-box">$$0.3 \cdot (k^*)^{0.5} = 0.07 \cdot k^*$$</div>
+      <p style="font-size:0.82rem;color:var(--muted)"><strong>Step 3</strong> — solve (divide both sides by $k^{*0.5}$, then square):</p>
+      <div class="formula-box">$$\frac{0.3}{0.07} = (k^*)^{0.5} \implies k^* = \left(\frac{0.3}{0.07}\right)^2 \approx 18.37$$</div>
+      <p style="font-size:0.82rem;color:var(--muted)"><strong>Interpretation:</strong> At $k = 18.37$, savings exactly offsets depreciation + population dilution, so per capita capital stops changing. Now raise $s$ to 0.4: $k^{*\prime} = (0.4/0.07)^2 \approx 32.65$ — a one-time jump to a higher level, but growth then stops again.</p>
+    </div>
+  </div>
+
+  <!-- T8 -->
+  <div class="notes-container" id="notes-8">
+    <div class="section-title">Topic 8 · Endogenous Growth Models</div>
+    <div class="section-subtitle">Romer Model · Increasing Returns · Spillovers</div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Concept</span>
+      <h3>Endogenous vs Exogenous Variables</h3>
+      <ul>
+        <li><strong>Exogenous:</strong> Values assumed/given (e.g., savings rate in Harrod-Domar).</li>
+        <li><strong>Endogenous:</strong> Values functionally derived from model dynamics (e.g., growth rate in Harrod-Domar).</li>
+        <li>Solow is called an <em>exogenous</em> growth model because the determining factor of long-run growth (technology A) is exogenous — even though growth itself is derived within the model.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Key Idea</span>
+      <h3>Endogenous Growth Theory</h3>
+      <ul>
+        <li>Motivated by Solow's limitations — seeks to explain <em>all</em> factors of growth within one model.</li>
+        <li>Relaxes the classic assumption of constant/diminishing returns to scale.</li>
+        <li><strong>Evidence for increasing returns:</strong> capital-intensive manufacturing, education externalities, technological dissemination/copying between firms.</li>
+        <li>Allowing increasing returns creates a feedback loop where returns to investment increase as investment increases → self-sustaining growth.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Model</span>
+      <h3>Romer Model — Overview</h3>
+      <ul>
+        <li>Developed by Paul Romer (Nobel laureate, World Bank Chief Economist).</li>
+        <li>Key papers: 1986 and 1990.</li>
+        <li>Models technological change as "learning by doing" — capital investments by firms create knowledge that benefits all firms (spillovers = public good).</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Formula</span>
+      <h3>Romer Aggregate Production Function</h3>
+      <div class="formula-box">
+        <div style="margin-bottom:8px;font-size:0.75rem;color:var(--muted);letter-spacing:1px;">FIRM LEVEL</div>
+        $$Y_i = A K_i^\alpha L_i^{1-\alpha} \bar{K}^\beta \quad \text{where } \bar{K} = \tfrac{1}{N}\textstyle\sum_{i=1}^N K_i$$
+        <div style="margin:10px 0 8px;font-size:0.75rem;color:var(--muted);letter-spacing:1px;">AGGREGATE</div>
+        $$Y = A K^{\alpha+\beta} L^{1-\alpha} \quad 0 < \alpha < 1,\; 1-\alpha > \beta > 0$$
+      </div>
+      <p>The term K^β is the endogenous component — it models spillovers where firm-level investments generate knowledge usable by all firms.</p>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Derivation</span>
+      <h3>Long-Run Growth Equation</h3>
+      <div class="formula-box">
+        $$g = \frac{n(1-\alpha)}{1-\alpha-\beta}$$
+        <div style="margin-top:10px;font-size:0.82rem;color:var(--muted)">Capital law of motion: $\dot{K} = sY - \delta K$</div>
+      </div>
+      <ul>
+        <li>If β = 0 (no spillovers), then g = n — same as Solow (per capita income constant long-run).</li>
+        <li>If β &gt; 0, growth exceeds population growth — self-sustaining growth is possible.</li>
+        <li>Requires 1−α−β &gt; 0 for the model to be stable.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof 1</span>
+      <h3>Proving $\dot{Y}/Y = \dot{K}/K = g$ in Steady State</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Given</span>
+        <div class="proof-step-body">Capital law of motion: $\dot{K} = sY - \delta K$. Divide both sides by $K$:
+          <div class="formula-box">$$\frac{\dot{K}}{K} = s\frac{Y}{K} - \delta$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">In steady state, $\dot{K}/K$ is constant. For this to hold, $Y/K$ must also be constant. Call the constant ratio $a$, so $Y = aK$ for all $t$.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">Differentiate $Y = aK$ with respect to time:
+          <div class="formula-box">$$\dot{Y} = a\dot{K}$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 3</span>
+        <div class="proof-step-body">Divide both sides by $Y = aK$:
+          <div class="formula-box">$$\frac{\dot{Y}}{Y} = \frac{a\dot{K}}{aK} = \frac{\dot{K}}{K}$$</div>
+          Therefore in steady state $\dot{Y}/Y = \dot{K}/K \equiv g$. $\checkmark$
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof 2</span>
+      <h3>Full Derivation of $g = \dfrac{n(1-\alpha)}{1-\alpha-\beta}$</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Given</span>
+        <div class="proof-step-body">Aggregate production function: $Y = AK^{\alpha+\beta}L^{1-\alpha}$</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">Compute the partial derivatives of $Y$ with respect to $K$ and $L$:
+          <div class="formula-box">
+            $$\frac{\partial Y}{\partial K} = A(\alpha+\beta)K^{\alpha+\beta-1}L^{1-\alpha} = \frac{(\alpha+\beta)Y}{K}$$
+            $$\frac{\partial Y}{\partial L} = A(1-\alpha)K^{\alpha+\beta}L^{-\alpha} = \frac{(1-\alpha)Y}{L}$$
+          </div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">Use the chain rule to differentiate $Y(K(t), L(t))$ with respect to time:
+          <div class="formula-box">$$\dot{Y} = \frac{\partial Y}{\partial K}\dot{K} + \frac{\partial Y}{\partial L}\dot{L} = \frac{(\alpha+\beta)Y}{K}\dot{K} + \frac{(1-\alpha)Y}{L}\dot{L}$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 3</span>
+        <div class="proof-step-body">Divide through by $Y$ to express in growth rates:
+          <div class="formula-box">$$\frac{\dot{Y}}{Y} = (\alpha+\beta)\frac{\dot{K}}{K} + (1-\alpha)\frac{\dot{L}}{L}$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 4</span>
+        <div class="proof-step-body">Substitute steady-state values $\dot{Y}/Y = g$, $\dot{K}/K = g$ (from Proof 1), and $\dot{L}/L = n$:
+          <div class="formula-box">$$g = (\alpha+\beta)g + (1-\alpha)n$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 5</span>
+        <div class="proof-step-body">Collect $g$ terms on the left:
+          <div class="formula-box">
+            $$g - (\alpha+\beta)g = (1-\alpha)n$$
+            $$g\bigl[1 - (\alpha+\beta)\bigr] = (1-\alpha)n$$
+            $$g(1-\alpha-\beta) = (1-\alpha)n$$
+          </div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 6</span>
+        <div class="proof-step-body">Divide both sides by $(1-\alpha-\beta) > 0$:
+          <div class="formula-box">$$\boxed{g = \frac{n(1-\alpha)}{1-\alpha-\beta}}$$</div>
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Exam Focus</span>
+      <h3>FDI & Convergence Predictions</h3>
+      <ul>
+        <li><strong>Solow:</strong> FDI flows to <em>poorer</em> countries (lower tech → higher returns). Countries converge if technologies & savings equalize.</li>
+        <li><strong>Romer:</strong> FDI flows to <em>wealthier</em> countries (increasing returns → highest returns where capital stocks already high). No guarantee of convergence. Recessions can permanently set countries back.</li>
+        <li>Romer better fits the real-world observation that FDI flows disproportionately to HICs.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>Romer Growth Rate $g$ vs Spillover Parameter $\beta$</h3>
+      <p>As $\beta$ rises from 0, the long-run growth rate exceeds the Solow benchmark $n$. Adjust $\alpha$ and $n$ to explore.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-romer" height="240"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl">
+          <label>Capital share α</label>
+          <input type="range" id="a-romer" min="0.2" max="0.7" step="0.05" value="0.5" oninput="updateRomer()">
+          <span class="val" id="a-romer-val">0.50</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Pop. growth <em>n</em></label>
+          <input type="range" id="n-romer" min="0.005" max="0.06" step="0.005" value="0.02" oninput="updateRomer()">
+          <span class="val" id="n-romer-val">0.020</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Spillover β (current)</label>
+          <input type="range" id="b-romer" min="0" max="0.45" step="0.01" value="0.2" oninput="updateRomer()">
+          <span class="val" id="b-romer-val">0.20</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="graph-stat">g (Romer) = <span id="g-romer-val">—</span></span>
+        <span class="graph-stat">g (Solow β=0) = n = <span id="g-solow-val">—</span></span>
+        <span class="graph-stat">Multiplier = <span id="g-mult-val">—</span></span>
+      </div>
+    </div>
+
+    <div class="concept-block example-block">
+      <span class="tag tag-exam">Worked Example</span>
+      <h3>Computing the Romer Growth Rate</h3>
+      <p>Suppose $\alpha = 0.5$, $\beta = 0.2$, $n = 0.03$. Find the long-run growth rate $g$.</p>
+      <div class="formula-box">$$g = \frac{n(1-\alpha)}{1-\alpha-\beta} = \frac{0.03 \times (1-0.5)}{1-0.5-0.2} = \frac{0.03 \times 0.5}{0.3} = \frac{0.015}{0.3} = 0.05$$</div>
+      <p style="font-size:0.82rem;color:var(--muted)"><strong>Interpretation:</strong> Long-run output grows at 5% per year, exceeding the population growth rate of 3% — so per capita income rises at 2% per year indefinitely. This is self-sustaining growth driven by spillovers ($\beta = 0.2 > 0$).</p>
+      <p style="margin-top:12px;font-size:0.82rem;color:var(--muted)"><strong>Comparison — Solow (β = 0):</strong></p>
+      <div class="formula-box">$$g_{\text{Solow}} = \frac{0.03 \times 0.5}{1 - 0.5 - 0} = \frac{0.015}{0.5} = 0.03 = n$$</div>
+      <p style="font-size:0.82rem;color:var(--muted)">With no spillovers, growth just equals population growth — per capita income stays flat in the long run.</p>
+    </div>
+  </div>
+
+  <!-- T9 -->
+  <div class="notes-container" id="notes-9">
+    <div class="section-title">Topic 9 · Equilibria & Coordination Failure</div>
+    <div class="section-subtitle">Nash Equilibrium · Kerala Fish Markets · Multiple Equilibria</div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Game Theory</span>
+      <h3>Nash Equilibrium</h3>
+      <p>A combination of strategies where <em>no individual player has an incentive to deviate</em>, given that all others play the equilibrium strategy.</p>
+      <ul>
+        <li>More general than Dominant Strategy Equilibrium (DSE) — only requires best response to <em>equilibrium</em> play, not all undominated actions.</li>
+        <li>All DSE are Nash equilibria, but not vice versa.</li>
+        <li>Games can have multiple Nash equilibria (e.g., Battle of the Sexes has two).</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Example</span>
+      <h3>Prisoner's Dilemma vs. Battle of the Sexes</h3>
+      <ul>
+        <li><strong>Prisoner's Dilemma:</strong> Has a dominant strategy equilibrium (both confess) — players always confess regardless of opponent's choice.</li>
+        <li><strong>Battle of the Sexes:</strong> No DSE, but two Nash equilibria: (Opera, Opera) and (Fight, Fight).</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Case Study</span>
+      <h3>Kerala Fish Markets (Jensen 2007)</h3>
+      <ul>
+        <li>Fishermen and buyers must choose markets, but lack of communication prevents coordination on the more profitable equilibrium.</li>
+        <li>Fish are sometimes discarded due to poor coordination.</li>
+        <li>Mobile phone introduction → better coordination → prices stabilized, profits rose.</li>
+        <li>Illustrates: costs of bad equilibria, difficulty of coordinating toward better ones.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Core Model</span>
+      <h3>Multiple Equilibria Model</h3>
+      <ul>
+        <li>Uses best response functions in a two-player symmetric game.</li>
+        <li>Nash Equilibrium condition: Y* = f(Y*) — player's best response to opponent's equilibrium action is that same action.</li>
+        <li>Model has <strong>three equilibria</strong>: two stable, one unstable.</li>
+        <li><strong>Stable equilibria:</strong> Robust to small deviations — system returns to equilibrium. (Like k* in Solow.)</li>
+        <li><strong>Unstable equilibrium:</strong> Any deviation causes shift to a different equilibrium.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof</span>
+      <h3>Stability Condition for Nash Equilibria in the Best-Response Model</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Setup</span>
+        <div class="proof-step-body">In a symmetric two-player game, the Nash Equilibrium condition is $Y^* = f(Y^*)$, where $f$ is the best-response function. A NE is <strong>stable</strong> if, after a small perturbation $\varepsilon$, the system returns to $Y^*$.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">Suppose player 2 deviates slightly: $Y_2 = Y^* + \varepsilon$. Player 1's best response is:
+          <div class="formula-box">$$Y_1 = f(Y^* + \varepsilon) \approx f(Y^*) + f'(Y^*)\varepsilon = Y^* + f'(Y^*)\varepsilon$$</div>
+          The deviation from $Y^*$ in player 1's response is $f'(Y^*)\cdot\varepsilon$.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">For the system to return to equilibrium, the response to the perturbation must shrink — meaning each round of best-response adjustment brings players closer to $Y^*$. This requires the deviation to shrink:
+          <div class="formula-box">$$|f'(Y^*)| < 1 \implies \text{stable equilibrium}$$</div>
+          Conversely, if $|f'(Y^*)| > 1$, the deviation grows and the equilibrium is <strong>unstable</strong>.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Graphically</span>
+        <div class="proof-step-body">
+          Plot $Y_1 = f(Y_2)$ and the 45° line $Y_1 = Y_2$. Nash equilibria are intersections.
+          <ul style="margin-top:8px;">
+            <li>Where $f$ <em>cuts through</em> the 45° line <strong>from above</strong> (slope of $f$ < 1): <strong>stable</strong> — deviations are self-correcting.</li>
+            <li>Where $f$ <em>cuts through</em> the 45° line <strong>from below</strong> (slope of $f$ > 1): <strong>unstable</strong> — deviations amplify.</li>
+          </ul>
+          In the multiple equilibria model: the two outer intersections are stable; the middle intersection is unstable because $f$ crosses the 45° line from below there.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Intuition</span>
+        <div class="proof-step-body">Think of the unstable equilibrium as a ball balanced on a hilltop — any nudge sends it rolling toward one of the stable valleys (the two stable NE). The stable equilibria are like valleys — the ball returns after small pushes.</div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>Multiple Equilibria — Best Response Diagram</h3>
+      <p>The S-shaped best-response curve $f(Y_j)$ crosses the 45° line at 3 points: two stable NE (filled circles) and one unstable NE (open circle). Adjust the curvature to see equilibria collapse or multiply.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-ne" height="260"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl" style="min-width:160px;">
+          <label>Steepness (slope at mid)</label>
+          <input type="range" id="steep-ne" min="1.5" max="6" step="0.1" value="3.5" oninput="updateNE()">
+          <span class="val" id="steep-ne-val">3.5</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Midpoint shift</label>
+          <input type="range" id="mid-ne" min="30" max="70" step="1" value="50" oninput="updateNE()">
+          <span class="val" id="mid-ne-val">50</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;font-size:0.78rem;color:var(--muted);">
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--accent2);margin-right:5px;"></span>Stable NE &nbsp;
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;border:2px solid #e05c7a;background:transparent;margin-right:5px;"></span>Unstable NE
+      </div>
+    </div>
+
+    <div class="concept-block example-block">
+      <span class="tag tag-exam">Worked Example</span>
+      <h3>Game Theory Examples: Prisoner's Dilemma &amp; Battle of the Sexes</h3>
+      <p>Each player chooses <em>Silent</em> or <em>Confess</em>. Payoffs are (Prisoner A, Prisoner B):</p>
+      <div class="formula-box" style="font-size:0.82rem;line-height:2.2;">
+        <div style="display:grid;grid-template-columns:auto 1fr 1fr;gap:4px 14px;align-items:center;">
+          <span></span><span style="color:var(--accent2);text-align:center;">B: Silent</span><span style="color:var(--accent2);text-align:center;">B: Confess</span>
+          <span style="color:var(--accent2)">A: Silent</span><span style="text-align:center;">−1, −1</span><span style="text-align:center;">−9, 0</span>
+          <span style="color:var(--accent2)">A: Confess</span><span style="text-align:center;">0, −9</span><span style="text-align:center;">−6, −6</span>
+        </div>
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted)"><strong>Checking for dominant strategies:</strong><br>
+      If B plays Silent: A gets −1 (Silent) vs 0 (Confess) → A prefers Confess.<br>
+      If B plays Confess: A gets −9 (Silent) vs −6 (Confess) → A prefers Confess.<br>
+      Confess dominates for A regardless — and by symmetry, for B too.<br>
+      <strong>DSE (and NE):</strong> (Confess, Confess) with payoffs (−6, −6). Note both would be better off at (Silent, Silent) = (−1,−1), but that is not a NE — each has an incentive to deviate.</p>
+
+      <p style="margin-top:16px;font-size:0.82rem;color:var(--muted)"><strong>Battle of the Sexes — two NE, no DSE:</strong></p>
+      <div class="formula-box" style="font-size:0.82rem;line-height:2.2;">
+        <div style="display:grid;grid-template-columns:auto 1fr 1fr;gap:4px 14px;align-items:center;">
+          <span></span><span style="color:var(--accent2);text-align:center;">Pat: Opera</span><span style="color:var(--accent2);text-align:center;">Pat: Fight</span>
+          <span style="color:var(--accent2)">Chris: Opera</span><span style="text-align:center;">2, 1</span><span style="text-align:center;">0, 0</span>
+          <span style="color:var(--accent2)">Chris: Fight</span><span style="text-align:center;">0, 0</span><span style="text-align:center;">1, 2</span>
+        </div>
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted)">Check (Opera, Opera): Chris gets 2 — switching to Fight gives 0. No incentive to deviate. ✓ NE.<br>
+      Check (Fight, Fight): Pat gets 2 — switching to Opera gives 0. No incentive to deviate. ✓ NE.<br>
+      No dominant strategy exists (Chris prefers to match Pat, not one fixed action).</p>
+    </div>
+  </div>
+
+  <!-- T10 -->
+  <div class="notes-container" id="notes-10">
+    <div class="section-title">Topic 10 · Big Push Model</div>
+    <div class="section-subtitle">Poverty Traps · Modernization · Pecuniary Externalities</div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Overview</span>
+      <h3>Big Push — Core Ideas</h3>
+      <ul>
+        <li>Combines Nash Equilibrium + multiple equilibria to model economy-wide industrialization decisions.</li>
+        <li>Three possible outcomes: destined to modernize (HICs/W1), require coordination (Asian Tigers/W2), cannot modernize alone (LICs/W3).</li>
+        <li>Demonstrates <strong>poverty trap</strong>: countries can be stuck in a bad (low-wage, low-production) equilibrium.</li>
+        <li>Key concept: <strong>pecuniary externalities</strong> — spillovers from one firm's decisions to another's costs/revenues.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Model Assumptions</span>
+      <h3>Economy Structure</h3>
+      <ul>
+        <li>Closed economy, N industries; output priced at 1 (numeraire).</li>
+        <li>Labor L equally divided: L/N per industry; wages differ by firm type.</li>
+        <li>Only choice: traditional vs. modern manufacturing.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Production</span>
+      <h3>Traditional vs. Modern Firms</h3>
+      <div class="formula-box">
+        <div style="margin-bottom:6px;font-size:0.75rem;color:var(--muted);letter-spacing:1px;">TRADITIONAL</div>
+        $$Q_t(L) = L \qquad C(Q) = w_t \cdot Q = Q \quad (w_t = 1)$$
+        <div style="margin:10px 0 6px;font-size:0.75rem;color:var(--muted);letter-spacing:1px;">MODERN</div>
+        $$L = F + cQ \quad (0 < c < 1)$$
+        $$Q_m(L) = \tfrac{1}{c}L - \tfrac{1}{c}F \qquad W_i(Q) = w_i(F + cQ)$$
+      </div>
+      <ul>
+        <li>Modern firms have <strong>higher marginal product</strong> (1/c &gt; 1) but require fixed cost F.</li>
+        <li>Modern firms monopolize their sector (threat-of-entry pricing).</li>
+        <li>Due to symmetry, only Nash equilibria are: all modernize OR none modernize.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof 1</span>
+      <h3>Deriving the Modern Firm's Production Function</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Given</span>
+        <div class="proof-step-body">The total labor required to produce $Q$ units in a modern firm is:
+          <div class="formula-box">$$L = F + cQ \quad \text{where } F > 0,\; 0 < c < 1$$</div>
+          $F$ is the fixed overhead labor (to operate the machine); $cQ$ is the variable component.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">Invert $L = F + cQ$ to express output as a function of labor:
+          <div class="formula-box">$$cQ = L - F \implies Q_m(L) = \frac{1}{c}L - \frac{1}{c}F = \frac{L-F}{c}$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">The marginal product of labor in the modern sector is:
+          <div class="formula-box">$$\frac{dQ_m}{dL} = \frac{1}{c}$$</div>
+          Since $0 < c < 1$, we have $1/c > 1$. Modern firms produce more than one unit of output per unit of labor — strictly higher productivity than the traditional sector where $dQ_t/dL = 1$.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 3</span>
+        <div class="proof-step-body">For a given industry labor supply $L/N$, compare outputs:
+          <div class="formula-box">
+            $$Q_m\!\left(\frac{L}{N}\right) = \frac{1}{c}\frac{L}{N} - \frac{F}{c} \qquad Q_t\!\left(\frac{L}{N}\right) = \frac{L}{N}$$
+            $$Q_m > Q_t \iff \frac{1}{c}\frac{L}{N} - \frac{F}{c} > \frac{L}{N} \iff \frac{L}{N}\!\left(\frac{1}{c}-1\right) > \frac{F}{c}$$
+          </div>
+          This holds when $L/N$ is large enough — i.e., when labor supply per industry is sufficient to cover the fixed cost overhead.
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof 2</span>
+      <h3>Only Symmetric Outcomes Can Be Nash Equilibria</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Setup</span>
+        <div class="proof-step-body">There are $N$ identical firms, each choosing between Traditional ($T$) or Modern ($M$). Suppose a candidate Nash Equilibrium has $k$ firms playing $M$ and $N-k$ playing $T$, where $0 < k < N$ (a mixed outcome).</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">Consider one of the $k$ modernizing firms. Its payoff from playing $M$ is $\pi_M(k)$ (depends on how many others also modernize, which determines aggregate demand and wages).
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">Because all firms are <em>identical</em>, they face the same payoff function. If playing $M$ is optimal for one firm given the others' strategies, it must be optimal for <em>all</em> firms in the same position. Therefore a firm playing $T$ faces the same calculation — and should also switch to $M$.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 3</span>
+        <div class="proof-step-body">This means a traditional firm always has an incentive to deviate — contradicting the Nash Equilibrium condition (no firm has an incentive to deviate). Therefore no asymmetric outcome with $0 < k < N$ can be a NE.
+          <div class="formula-box">$$\text{Nash Equilibria} \in \{\text{all } T,\; \text{all } M\} \quad \text{only.}$$</div>
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Key Results</span>
+      <h3>Three Wage Scenarios</h3>
+      <ul>
+        <li><strong>W1 (low wages — HICs/high demand):</strong> Modernizing is profitable regardless of others' choices → all modernize is the NE. Destined to modernize.</li>
+        <li><strong>W3 (very high wages — LICs stuck):</strong> Modernizing is unprofitable even if all others modernize → no modernization NE only. Never modernize.</li>
+        <li><strong>W2 (intermediate — coordination needed):</strong> Profitable only IF all others also modernize. Coordination required. This is the "big push" scenario.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Policy</span>
+      <h3>Solving the W2 Coordination Problem</h3>
+      <ul>
+        <li>Firms cannot solve the problem alone (externality).</li>
+        <li><strong>Options:</strong> technological change (e.g., Kerala mobile phones), government subsidies targeting industries with strong externalities, or external/international support.</li>
+        <li>Other considerations: lock-in from increasing returns, linkages between industries, inequality (poverty blocks education investment).</li>
+      </ul>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>Big Push — Modernization Profit vs Fraction of Modernizing Firms</h3>
+      <p>Profit $= \pi(\lambda)$ where $\lambda$ is the fraction of other firms that modernize. Nash equilibria are where profit crosses zero. Adjust the wage level to switch between W1, W2, and W3 scenarios.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-bigpush" height="240"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl" style="min-width:160px;">
+          <label>Wage level <em>w</em></label>
+          <input type="range" id="w-bp" min="0.5" max="2.5" step="0.05" value="1.4" oninput="updateBigPush()">
+          <span class="val" id="w-bp-val">1.40</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Fixed cost <em>F</em></label>
+          <input type="range" id="f-bp" min="0.5" max="4" step="0.1" value="2" oninput="updateBigPush()">
+          <span class="val" id="f-bp-val">2.0</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Labor per industry</label>
+          <input type="range" id="l-bp" min="6" max="20" step="0.5" value="10" oninput="updateBigPush()">
+          <span class="val" id="l-bp-val">10.0</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="graph-stat" id="bp-scenario">Scenario: —</span>
+      </div>
+    </div>
+
+    <div class="concept-block example-block">
+      <span class="tag tag-exam">Worked Example</span>
+      <h3>Big Push: W1, W2, W3 Scenarios Numerically</h3>
+      <p>Let $F=2$, $c=0.5$, $L/N = 10$. Industry demand when all modernize: $Q_2$ (higher). Industry demand when none modernize: $Q_1$ (lower). Suppose $Q_1 = 10$ and $Q_2 = 18$.</p>
+      <p style="margin-top:10px;font-size:0.82rem;color:var(--muted)"><strong>Modern firm's output</strong> given $L/N=10$:</p>
+      <div class="formula-box">$$Q_m = \frac{1}{c}\cdot\frac{L}{N} - \frac{1}{c}F = 2 \times 10 - 2 \times 2 = 16$$</div>
+      <p style="font-size:0.82rem;color:var(--muted)"><strong>Scenario A — "All modernize" (demand = $Q_2 = 18$, firm produces $Q_m = 16$):</strong></p>
+      <div class="formula-box">
+        Revenue $= 1 \times 16 = 16$<br>
+        Wage bill at $w_2$: test with $w_2 = 1.4$: $W = 1.4(2 + 0.5 \times 16) = 1.4 \times 10 = 14$<br>
+        Profit $= 16 - 14 = +2 > 0$ ✓ Profitable to modernize.
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted)"><strong>Scenario B — "No one modernizes" (demand = $Q_1 = 10$, only $Q_1$ can be sold):</strong></p>
+      <div class="formula-box">
+        Revenue $= 1 \times 10 = 10$<br>
+        Wage bill: $W = 1.4(2 + 0.5 \times 10) = 1.4 \times 7 = 9.8$<br>
+        Profit $= 10 - 9.8 = +0.2 > 0$ ✓ Still profitable even if alone!
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted)">This is the <strong>W1 case</strong> — the firm modernizes regardless of others. Now raise $w$ to $w_3 = 2$: Scenario B wage bill $= 2 \times 7 = 14 > 10$ → profit negative → <strong>W3 case</strong> (no firm ever modernizes). At an intermediate $w_2$ where Scenario A is profitable but Scenario B is not, we get <strong>W2</strong> — coordination required.</p>
+    </div>
+  </div>
+
+  <!-- T11 -->
+  <div class="notes-container" id="notes-11">
+    <div class="section-title">Topic 11 · O-Ring Theory</div>
+    <div class="section-subtitle">Kremer · Assortative Matching · Complementarities</div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Background</span>
+      <h3>O-Ring Theory — Origins</h3>
+      <ul>
+        <li>Developed by Michael Kremer.</li>
+        <li>Named after the 1986 Challenger disaster — a single faulty o-ring caused catastrophic failure.</li>
+        <li>Best intuitive model: an orchestra — the quality of the weakest player affects the whole.</li>
+        <li>Fits well with modern manufacturing and high-skill services.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Formula</span>
+      <h3>O-Ring Production Function</h3>
+      <div class="formula-box">
+        $$F(q_1, \ldots, q_N) = B \prod_{i=1}^{N} q_i \qquad 0 \le q_i \le 1$$
+        <div style="margin-top:10px;font-size:0.82rem;color:var(--muted)">Example with 2 inputs: $F(q_1, q_2) = B q_1 q_2$</div>
+      </div>
+      <p>Output is the <strong>product</strong> of all input qualities. This creates <em>extreme complementarities</em>: even one low-quality input dramatically reduces total output — "one bad apple spoils the bunch."</p>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Key Result</span>
+      <h3>Assortative Matching</h3>
+      <ul>
+        <li>High-quality inputs have <strong>higher marginal products in high-quality firms</strong> than in low-quality firms.</li>
+        <li>This drives <em>assortative matching</em>: like inputs group together.</li>
+        <li>Proof with two firms: assortative output = q_l² + q_h² &gt; heterogeneous output = 2q_l·q_h (since (q_h−q_l)² &gt; 0).</li>
+        <li>Conditions needed: inputs must be sufficiently imperfect substitutes AND production must be sufficiently complementary.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof 1</span>
+      <h3>O-Ring Production Creates Complementarities: $\partial^2 F / \partial q_i \partial q_j > 0$</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Setup</span>
+        <div class="proof-step-body">We want to show that the marginal product of worker $i$'s quality is <em>increasing</em> in the quality of every other worker $j \neq i$. This is the formal definition of complementarity.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">The O-Ring production function with $N$ workers and $B = 1$:
+          <div class="formula-box">$$F(q_1, \ldots, q_N) = \prod_{i=1}^{N} q_i$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">Take the partial derivative with respect to $q_i$. Since $q_i$ appears exactly once as a multiplicative factor:
+          <div class="formula-box">$$\frac{\partial F}{\partial q_i} = \prod_{j \neq i} q_j$$</div>
+          This is the marginal product of worker $i$'s quality — it equals the product of all other workers' qualities.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 3</span>
+        <div class="proof-step-body">Now differentiate again with respect to any other worker $q_k$ (where $k \neq i$):
+          <div class="formula-box">$$\frac{\partial^2 F}{\partial q_i \, \partial q_k} = \frac{\partial}{\partial q_k}\!\left(\prod_{j \neq i} q_j\right) = \prod_{j \neq i,\, j \neq k} q_j$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 4</span>
+        <div class="proof-step-body">Since all qualities $q_j \in (0, 1]$, the product of any subset of them is strictly positive:
+          <div class="formula-box">$$\frac{\partial^2 F}{\partial q_i \, \partial q_k} = \prod_{j \neq i,\, j \neq k} q_j > 0$$</div>
+          The marginal product of worker $i$ strictly increases with every other worker's quality. This confirms strong complementarities across all pairs of inputs.
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof 2</span>
+      <h3>Assortative Matching Theorem: Total Output Is Higher Under Like-with-Like Grouping</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Setup</span>
+        <div class="proof-step-body">Two firms, each requiring exactly 2 workers. Four workers available: two high-skill ($q_H$) and two low-skill ($q_L$), with $q_H > q_L > 0$. $B = 1$, so $F(a, b) = ab$.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">Compute total output under <strong>assortative matching</strong> (Firm 1: $q_H, q_H$; Firm 2: $q_L, q_L$):
+          <div class="formula-box">$$\Pi_A = q_H \cdot q_H + q_L \cdot q_L = q_H^2 + q_L^2$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">Compute total output under <strong>heterogeneous matching</strong> (Firm 1: $q_H, q_L$; Firm 2: $q_H, q_L$):
+          <div class="formula-box">$$\Pi_H = q_H \cdot q_L + q_H \cdot q_L = 2q_H q_L$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 3</span>
+        <div class="proof-step-body">Compute the difference $\Pi_A - \Pi_H$:
+          <div class="formula-box">$$\Pi_A - \Pi_H = q_H^2 + q_L^2 - 2q_H q_L = (q_H - q_L)^2$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 4</span>
+        <div class="proof-step-body">Since $q_H > q_L$, we have $(q_H - q_L)^2 > 0$, therefore:
+          <div class="formula-box">$$\Pi_A > \Pi_H \quad \text{for all } q_H \neq q_L$$</div>
+          Assortative matching strictly dominates heterogeneous matching. The efficiency gap grows with $|q_H - q_L|$ — the wider the skill gap, the bigger the payoff from sorting.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Why firms sort</span>
+        <div class="proof-step-body">The high-skill firm's marginal value of hiring a high-skill worker is $\partial F / \partial q_2 \big|_{q_1=q_H} = q_H$. The low-skill firm's marginal value is $\partial F / \partial q_2 \big|_{q_1=q_L} = q_L$. Since $q_H > q_L$, the high-skill firm always <em>outbids</em> the low-skill firm for the high-quality worker — assortative matching is the only competitive equilibrium.
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Implications</span>
+      <h3>O-Ring Theory Implications</h3>
+      <ul>
+        <li>Firms hire workers of similar skill levels (explains law firms, consulting firms, etc.).</li>
+        <li>Same task is paid more in higher-skill firms → explains extreme income inequality.</li>
+        <li>Surrounding skill levels raise incentives to learn.</li>
+        <li>Creates <strong>low-production poverty traps</strong>: poor institutions can't attract high-quality inputs (e.g., poor hospital can't hire top neurosurgeon).</li>
+        <li>Contrast: additive production function (F = q₁ + q₂) has no complementarities — marginal product is always 1, assortative matching irrelevant.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>O-Ring vs Additive Production — Output as One Worker's Quality Varies</h3>
+      <p>Fix one worker's quality at $q_1$ and vary the second worker $q_2$ from 0 to 1. See how the O-Ring function collapses with low quality but the additive function does not.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-oring" height="240"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl" style="min-width:160px;">
+          <label>Fixed worker quality $q_1$</label>
+          <input type="range" id="q1-oring" min="0.1" max="1.0" step="0.05" value="0.8" oninput="updateORing()">
+          <span class="val" id="q1-oring-val">0.80</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Number of tasks <em>N</em></label>
+          <input type="range" id="n-oring" min="2" max="8" step="1" value="2" oninput="updateORing()">
+          <span class="val" id="n-oring-val">2</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;font-size:0.78rem;color:var(--muted);">
+        <span style="display:inline-block;width:18px;height:3px;background:var(--accent);margin-right:5px;vertical-align:middle;"></span>O-Ring: $F=q_1^{N-1}\cdot q_2$ &nbsp;
+        <span style="display:inline-block;width:18px;height:3px;background:var(--accent2);margin-right:5px;vertical-align:middle;"></span>Additive: $F=(q_1(N{-}1)+q_2)/N$
+      </div>
+    </div>
+
+    <div class="concept-block example-block">
+      <span class="tag tag-exam">Worked Example</span>
+      <h3>O-Ring: Assortative Matching Numerically</h3>
+      <p>Two firms, each needing 2 workers. Four workers available: two high-skill ($q_H = 0.9$) and two low-skill ($q_L = 0.4$). $B = 1$, so $F(q_1,q_2) = q_1 q_2$.</p>
+      <p style="margin-top:12px;font-size:0.82rem;color:var(--muted)"><strong>Option 1 — Assortative matching</strong> (like with like):</p>
+      <div class="formula-box">
+        Firm A: $F(0.9, 0.9) = 0.81$<br>
+        Firm B: $F(0.4, 0.4) = 0.16$<br>
+        Total output $= 0.81 + 0.16 = \mathbf{0.97}$
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted)"><strong>Option 2 — Heterogeneous matching</strong> (mix them):</p>
+      <div class="formula-box">
+        Firm A: $F(0.9, 0.4) = 0.36$<br>
+        Firm B: $F(0.9, 0.4) = 0.36$<br>
+        Total output $= 0.36 + 0.36 = \mathbf{0.72}$
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted)">Assortative matching produces <strong>0.97 vs 0.72</strong> — 35% more total output. The high-quality firm also has far stronger incentive to pay for the second high-skill worker: its marginal product is $0.9$ vs only $0.4$ at the low-skill firm, so it will always outbid for top talent.</p>
+      <p style="margin-top:12px;font-size:0.82rem;color:var(--muted)"><strong>Poverty trap illustration:</strong> A hospital in a poor region has $q_1 = 0.2$ (basic equipment, weak support staff). Even hiring the world's best surgeon ($q_2 = 1.0$) gives $F = 0.2 \times 1.0 = 0.20$. The same surgeon at a top hospital with $q_1 = 0.95$ gives $F = 0.95$. The poor hospital simply cannot offer a competitive wage — the surgeon goes elsewhere.</p>
+    </div>
+  </div>
+
+  <!-- T12 -->
+  <div class="notes-container" id="notes-12">
+    <div class="section-title">Topic 12 · Population</div>
+    <div class="section-subtitle">Demographics · Transition · Malthus</div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Facts</span>
+      <h3>World Population Overview</h3>
+      <ul>
+        <li>~7.87 billion in 2021; projected 9.6B by 2050, 11B by 2100.</li>
+        <li>Growth concentrated in developing world (gains ~97% of new individuals).</li>
+        <li>Population growth driven primarily by <strong>falling death rates</strong>, not rising birth rates.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Key Metrics</span>
+      <h3>Components of Population Growth</h3>
+      <ul>
+        <li><strong>Crude Birth Rate:</strong> Births per 1,000 people per year — dramatically higher in LICs.</li>
+        <li><strong>Total Fertility Rate (TFR):</strong> Children born to a woman in her lifetime. Has fallen sharply in much of the developing world.</li>
+        <li><strong>Death Rate:</strong> Deaths per 1,000 per year. At historic lows due to control of famine, disease, plague.</li>
+        <li><strong>Dependency Ratio:</strong> Ratio of youth (0-14) + elderly (65+) to working-age (15-64) population. LICs have much higher youth dependency; aging HICs have higher elderly dependency.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Concept</span>
+      <h3>Population Pyramids & Hidden Momentum</h3>
+      <ul>
+        <li>Wide-base pyramids (LICs) slow the rate at which lower fertility rates reduce population growth.</li>
+        <li>More people are in childbearing age cohorts → <em>even as fertility falls, total births can keep rising</em>.</li>
+        <li>This is called the <strong>Hidden Momentum of Population Growth</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Core Framework</span>
+      <h3>Demographic Transition (3 Stages)</h3>
+      <ul>
+        <li><strong>Stage 1:</strong> Low birth and death rates → low population growth.</li>
+        <li><strong>Stage 2:</strong> Death rates fall first, birth rates lag → rapid population growth.</li>
+        <li><strong>Stage 3:</strong> Birth rates also fall → population stabilizes.</li>
+        <li>Developing countries differ from classic transition — faster death rate declines without the economic development that drove earlier demographic transitions.</li>
+        <li><strong>Replacement fertility:</strong> TFR that results in stable population levels (depends on death rate).</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Debate</span>
+      <h3>Is Population Growth a Problem?</h3>
+      <ul>
+        <li><strong>Ehrlich (Population Bomb, 1968):</strong> Population imperils well-being; predicted 1970s famines (wrong).</li>
+        <li><strong>Simon (The Ultimate Resource, 1981):</strong> Human innovation provides sufficient resources — closer to modern consensus.</li>
+        <li><strong>Consensus view (Todaro & Smith):</strong> Population growth is NOT the primary cause of poverty; rapid growth or extreme density can <em>inhibit</em> development. Focus on poverty, not population per se.</li>
+        <li>Solow model link: n (pop growth) acts like depreciation — high n requires higher savings to maintain per capita capital.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Historical</span>
+      <h3>Malthusian Poverty Trap</h3>
+      <ul>
+        <li>Thomas Malthus (1798): population grows geometrically, food supply arithmetically → eventual famine/catastrophe.</li>
+        <li><strong>Not a formal model</strong> — no individual actors or incentives, just hypothesized relationships.</li>
+        <li>Empirically fails: technological progress has consistently generated sufficient additional resources.</li>
+        <li>Reason economics is called the "Dismal Science"!</li>
+      </ul>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof 1</span>
+      <h3>Why Population Growth $n$ Acts Like Depreciation in Solow</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Claim</span>
+        <div class="proof-step-body">In the per capita capital accumulation equation, $n$ appears additively with $\delta$: both erode per capita capital at the same rate. We prove this from first principles.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">Start from the aggregate capital accumulation equation:
+          <div class="formula-box">$$\dot{K} = sY - \delta K$$</div>
+          where $\dot{K} = dK/dt$ in continuous time.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">Define per capita capital $k \equiv K/L$. Differentiate using the quotient rule:
+          <div class="formula-box">$$\dot{k} = \frac{d}{dt}\!\left(\frac{K}{L}\right) = \frac{\dot{K}L - K\dot{L}}{L^2} = \frac{\dot{K}}{L} - \frac{K}{L}\cdot\frac{\dot{L}}{L}$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 3</span>
+        <div class="proof-step-body">Since $\dot{L}/L = n$ (population grows at rate $n$) and $K/L = k$:
+          <div class="formula-box">$$\dot{k} = \frac{\dot{K}}{L} - nk$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 4</span>
+        <div class="proof-step-body">Substitute $\dot{K} = sY - \delta K$ and divide by $L$:
+          <div class="formula-box">$$\dot{k} = \frac{sY - \delta K}{L} - nk = sf(k) - \delta k - nk$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Result</span>
+        <div class="proof-step-body">Collecting terms:
+          <div class="formula-box">$$\boxed{\dot{k} = sf(k) - (\delta + n)k}$$</div>
+          Both $\delta$ and $n$ appear symmetrically. $\delta k$ represents physical wear on existing capital; $nk$ represents the capital that must be created just to equip new workers at the existing level. Both "eat into" per capita capital growth at the same rate per unit of $k$.
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof 2</span>
+      <h3>Formal Rebuttal of the Malthusian Trap: Technology Shifts the Constraint</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Malthus's Claim</span>
+        <div class="proof-step-body">Let $P(t) = P_0 \cdot r^t$ (geometric, $r > 1$) be population and $F(t) = F_0 + at$ (arithmetic) be food supply. Then:
+          <div class="formula-box">$$\frac{F(t)}{P(t)} = \frac{F_0 + at}{P_0 \cdot r^t} \xrightarrow{t \to \infty} 0$$</div>
+          Per capita food supply eventually collapses to zero — catastrophe is inevitable.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Rebuttal 1</span>
+        <div class="proof-step-body"><strong>Technology makes food supply endogenous.</strong> Suppose agricultural productivity grows at rate $g_A > 0$: $F(t) = F_0 \cdot e^{g_A t}$. Then:
+          <div class="formula-box">$$\frac{F(t)}{P(t)} = \frac{F_0 \cdot e^{g_A t}}{P_0 \cdot r^t} = \frac{F_0}{P_0} \cdot e^{(g_A - \ln r)t}$$</div>
+          If $g_A > \ln r = n$ (the population growth rate), per capita food supply grows without bound — the Malthusian catastrophe never arrives.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Rebuttal 2</span>
+        <div class="proof-step-body"><strong>Demographic transition makes $n$ endogenous.</strong> As incomes rise, $n$ falls. Let $n = n(y)$ where $n'(y) < 0$. In the Solow model:
+          <div class="formula-box">$$k^* = \left(\frac{sA}{\delta + n(y^*)}\right)^{\!\frac{1}{1-\alpha}}$$</div>
+          Higher income → lower $n$ → lower $(\delta + n)$ → higher $k^*$ → still higher income. The feedback is <em>stabilising</em>, not explosive as Malthus assumed.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Rebuttal 3</span>
+        <div class="proof-step-body"><strong>No micro-foundations.</strong> Malthus offers no model of individual fertility choice. A proper economic model (e.g., Becker's quantity-quality tradeoff) predicts that as child-rearing costs rise with income, parents choose fewer, higher-quality children — exactly the observed demographic transition pattern.
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>Demographic Transition & Solow Capital Dilution</h3>
+      <p>Left: Stylized demographic transition showing birth rate, death rate, and net growth across three stages. Right: How rising population growth $n$ depresses steady-state $k^*$.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="graph-canvas-wrap"><canvas id="chart-demog" height="220"></canvas></div>
+        <div class="graph-canvas-wrap"><canvas id="chart-pop-solow" height="220"></canvas></div>
+      </div>
+      <div class="graph-controls">
+        <div class="graph-ctrl">
+          <label>Savings rate <em>s</em></label>
+          <input type="range" id="s-pop" min="0.1" max="0.5" step="0.01" value="0.25" oninput="updatePopSolow()">
+          <span class="val" id="s-pop-val">0.25</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Depreciation δ</label>
+          <input type="range" id="d-pop" min="0.02" max="0.12" step="0.01" value="0.05" oninput="updatePopSolow()">
+          <span class="val" id="d-pop-val">0.05</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Capital share α</label>
+          <input type="range" id="a-pop" min="0.25" max="0.75" step="0.05" value="0.5" oninput="updatePopSolow()">
+          <span class="val" id="a-pop-val">0.50</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept-block example-block">
+      <span class="tag tag-exam">Worked Example</span>
+      <h3>Dependency Ratio &amp; Population Growth in Solow</h3>
+      <p><strong>Part A — Dependency Ratio:</strong> Country X has population 50 million: 15M aged 0-14, 30M aged 15-64, 5M aged 65+.</p>
+      <div class="formula-box">
+        $$\text{Dependency Ratio} = \frac{\text{Youth} + \text{Elderly}}{\text{Working Age}} = \frac{15 + 5}{30} = \frac{20}{30} \approx 0.67$$
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted)">For every 100 workers, 67 dependents must be supported. Compare to a typical HIC with ratio ~0.55 (mostly elderly) vs a typical LIC with ~0.85 (mostly youth).</p>
+
+      <p style="margin-top:16px;font-size:0.82rem;color:var(--muted)"><strong>Part B — Population growth in the Solow model:</strong> Use $\alpha=0.5$, $A=1$, $s=0.25$, $\delta=0.05$.</p>
+      <p style="font-size:0.82rem;color:var(--muted)">At $n=0.02$: $k^* = (0.25/0.07)^2 \approx 12.8$</p>
+      <p style="font-size:0.82rem;color:var(--muted)">At $n=0.04$: $k^* = (0.25/0.09)^2 \approx 7.7$</p>
+      <div class="formula-box">$$k^* = \left(\frac{s}{\delta + n}\right)^{\frac{1}{1-\alpha}}$$</div>
+      <p style="font-size:0.82rem;color:var(--muted)">Doubling the population growth rate from 2% to 4% cuts equilibrium per capita capital by nearly 40%. High population growth forces the economy to "run faster just to stay in place," requiring much more savings to maintain the same per capita capital stock.</p>
+    </div>
+  </div>
+  <!-- T13 -->
+  <div class="notes-container" id="notes-13">
+    <div class="section-title">Topic 13 · Inequality</div>
+    <div class="section-subtitle">Kuznets Curve · Lorenz Curve · Gini Coefficient</div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Overview</span>
+      <h3>Why Does Extreme Inequality Matter?</h3>
+      <ul>
+        <li><strong>Economic inefficiencies:</strong> The poor cannot access credit → underinvestment in education, health, business. Lower national savings (highest savers are the middle class). Capital flight — wealthy spend on imported luxury goods.</li>
+        <li><strong>Social instability:</strong> Encourages rent-seeking and exploitation by political elites. Concentrated political power → populist revolutions, civil strife.</li>
+        <li><strong>Fairness (Rawls's Veil of Ignorance):</strong> If you had to choose the income distribution of your country before knowing which family you'd be born into, most people prefer more equal distributions than those observed in LICs.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Model</span>
+      <h3>Kuznets Curve — Development & Inequality</h3>
+      <ul>
+        <li>Simon Kuznets (1950s): As development proceeds, inequality first <em>worsens</em> then <em>improves</em> — the famous <strong>inverted-U shape</strong>.</li>
+        <li><strong>Intuition:</strong> Early industrialization pulls workers from low-inequality agriculture into high-variance urban sector, widening gaps. Later, as most workers are urban and institutions mature, inequality narrows.</li>
+        <li><strong>Modern critique:</strong> Kuznets's results were largely driven by Latin American data. Many countries (Taiwan, South Korea, Costa Rica) developed <em>without</em> worsening inequality first. The inverted-U is no longer considered a universal law.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Concept</span>
+      <h3>Types of Inequality Measures</h3>
+      <ul>
+        <li><strong>Size Distributions:</strong> Rank individuals by income; assess shares accruing to each quintile/decile. Most commonly used.</li>
+        <li><strong>Functional Distributions:</strong> Income accruing to factors of production (labor, land, capital). E.g., fraction of GDP paid in wages.</li>
+        <li><strong>Weighted Measures:</strong> Intentionally over-weight certain parts of the distribution (e.g., the poor).</li>
+        <li><strong>Group Gap Measures:</strong> Compare average income across demographic groups — gender gap, racial wage gap, etc. Most common in the press; do <em>not</em> satisfy anonymity.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Formula</span>
+      <h3>Kuznets Ratio</h3>
+      <div class="formula-box">
+        $$\text{Kuznets Ratio} = \frac{\text{Income share of top 20\%}}{\text{Income share of bottom 40\%}}$$
+      </div>
+      <ul>
+        <li><strong>Perfect equality:</strong> Top 20% have 20% of income, bottom 40% have 40% → ratio = 0.5.</li>
+        <li><strong>Perfect inequality:</strong> Top 20% have 100%, bottom 40% have 0% → ratio → ∞.</li>
+        <li><strong>Example:</strong> Top 20% = 50%, bottom 40% = 14% → Ratio = 50/14 = 3.57.</li>
+        <li>Higher ratio = more inequality.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Formula</span>
+      <h3>Gini Coefficient & Lorenz Curve</h3>
+      <ul>
+        <li><strong>Lorenz Curve:</strong> Plot cumulative population share (x-axis, ordered by income) against cumulative income share (y-axis). The <em>line of equality</em> is the 45° diagonal.</li>
+        <li><strong>Gini Coefficient:</strong> Ratio of the area between the line of equality and the Lorenz curve to the area of the entire triangle below the line of equality.</li>
+      </ul>
+      <div class="formula-box">
+        $$G = \frac{A}{A+B}$$
+        <div style="font-size:0.82rem;color:var(--muted);margin-top:6px;">$A$ = area between line of equality and Lorenz curve<br>$A+B$ = total triangle area = 0.5<br>So: $G = 2A = 1 - 2B$</div>
+      </div>
+      <ul>
+        <li>$G = 0$: perfect equality (Lorenz = 45° line).</li>
+        <li>$G = 1$: perfect inequality (one person has everything).</li>
+        <li>More bowed out the Lorenz curve → higher Gini.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>Lorenz Curve & Gini Coefficient</h3>
+      <p>Drag the slider to increase inequality and watch the Lorenz curve bow further from the line of equality. The shaded area is $A$ — the Gini = $2A$.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-lorenz" height="260"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl" style="min-width:180px;">
+          <label>Inequality level</label>
+          <input type="range" id="ineq-lorenz" min="0" max="0.98" step="0.01" value="0.4" oninput="updateLorenz()">
+          <span class="val" id="ineq-lorenz-val">0.40</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="graph-stat">Gini ≈ <span id="gini-val">—</span></span>
+        <span class="graph-stat">Kuznets Ratio ≈ <span id="kr-val">—</span></span>
+      </div>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof</span>
+      <h3>Why $G = 1 - 2\int_0^1 L(x)\,dx$ (Continuous Gini Formula)</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Setup</span>
+        <div class="proof-step-body">Let $L(x)$ be the Lorenz curve, where $x \in [0,1]$ is the cumulative population share and $L(x)$ is the cumulative income share. The line of equality is $y = x$.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">Area $B$ (under the Lorenz curve):
+          <div class="formula-box">$$B = \int_0^1 L(x)\,dx$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">Total triangle area (under line of equality $y=x$):
+          <div class="formula-box">$$A + B = \int_0^1 x\,dx = \frac{1}{2}$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 3</span>
+        <div class="proof-step-body">Area $A$ = triangle area $-$ area $B$:
+          <div class="formula-box">$$A = \frac{1}{2} - B = \frac{1}{2} - \int_0^1 L(x)\,dx$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 4</span>
+        <div class="proof-step-body">$G = A/(A+B) = A/\tfrac{1}{2} = 2A$:
+          <div class="formula-box">$$\boxed{G = 2A = 1 - 2\int_0^1 L(x)\,dx}$$</div>
+          If $L(x) = x$ (perfect equality): $G = 1 - 2\int_0^1 x\,dx = 1 - 1 = 0$. ✓
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+
+    <div class="concept-block example-block">
+      <span class="tag tag-exam">Worked Example</span>
+      <h3>Calculating Kuznets Ratio from a Quintile Table</h3>
+      <p>Income shares by quintile: Q1=5%, Q2=9%, Q3=13%, Q4=23%, Q5=50%.</p>
+      <div class="formula-box">
+        Bottom 40% = Q1 + Q2 = 5 + 9 = 14%<br>
+        Top 20% = Q5 = 50%<br>
+        $$\text{Kuznets Ratio} = \frac{50}{14} = 3.57$$
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted)">Interpretation: The top 20% earn 3.57× more than the entire bottom 40%. For reference, the most equal countries (Scandinavia) have ratios ~0.9-1.2; highly unequal countries (South Africa, Brazil) exceed 10.</p>
+    </div>
+  </div>
+
+  <!-- T14 -->
+  <div class="notes-container" id="notes-14">
+    <div class="section-title">Topic 14 · Poverty</div>
+    <div class="section-subtitle">Poverty Lines · Headcount · Poverty Gap · FGT Index</div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Concept</span>
+      <h3>Poverty Lines</h3>
+      <ul>
+        <li>A <strong>poverty line</strong> $Y_p$ is an income threshold — families below are poor, above are not.</li>
+        <li>Can be set globally (World Bank $1/day, $2/day), nationally, or locally. Usually adjusted for PPP.</li>
+        <li><strong>Nutrition-based method (most common):</strong> Based on Engel's Law — the share of income spent on food falls as income rises. Steps: (1) estimate income-food-share relationship, (2) calculate cost of minimum nutrition, (3) find income level at which families can afford it.</li>
+        <li>UN minimum: cost of 2,000 calories/day. US USDA: Thrifty Food Plan meeting macro/micro-nutrient requirements.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Notation</span>
+      <h3>Basic Notation</h3>
+      <div class="formula-box">
+        $N$ = total population &nbsp;|&nbsp; $i \in \{1,\ldots,N\}$ = individuals<br>
+        $Y_i$ = income of person $i$ &nbsp;|&nbsp; $Y_p$ = poverty line<br>
+        $H$ = number of poor = $\displaystyle\sum_{i=1}^N \mathbf{1}[Y_i < Y_p]$
+      </div>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Formula</span>
+      <h3>Headcount Measures</h3>
+      <div class="formula-box">
+        $$H = \sum_{i=1}^{N} \mathbf{1}_{[Y_i < Y_p]} \qquad \text{(Headcount Statistic — number of poor)}$$
+        $$HI = \frac{H}{N} \qquad \text{(Headcount Index — fraction of population poor)}$$
+      </div>
+      <ul>
+        <li><strong>Limitation:</strong> HI says nothing about <em>how poor</em> the poor are. Lifting someone just below the line to just above it reduces HI by the same amount as lifting the destitute.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Formula</span>
+      <h3>Poverty Gap Measures</h3>
+      <div class="formula-box">
+        $$TPG = \sum_{i=1}^{H}(Y_p - Y_i) \qquad \text{(Total Poverty Gap)}$$
+        $$APG = \frac{TPG}{N} \quad NPG = \frac{APG}{Y_p} \quad AIS = \frac{TPG}{H} \quad NIS = \frac{AIS}{Y_p}$$
+      </div>
+      <div style="font-size:0.82rem;color:var(--muted);margin-top:8px;line-height:2;">
+        APG = average shortfall across <em>all</em> individuals &nbsp;|&nbsp; NPG = APG as % of poverty line<br>
+        AIS = average shortfall among the <em>poor only</em> &nbsp;|&nbsp; NIS = AIS as % of poverty line
+      </div>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Formula</span>
+      <h3>Foster-Greer-Thorbecke (FGT) Index</h3>
+      <div class="formula-box">
+        $$P_\alpha = \frac{1}{N}\sum_{i=1}^{H}\left(\frac{Y_p - Y_i}{Y_p}\right)^\alpha$$
+      </div>
+      <ul>
+        <li>$P_0$ ($\alpha=0$): each term = 1 → $P_0 = H/N = HI$ (Headcount Index)</li>
+        <li>$P_1$ ($\alpha=1$): each term = $(Y_p-Y_i)/Y_p$ → $P_1 = NPG$ (Normalized Poverty Gap)</li>
+        <li>$P_2$ ($\alpha=2$): <strong>Squared Poverty Gap</strong> — weights the poorest most heavily:</li>
+      </ul>
+      <div class="formula-box">
+        $$P_2 = \frac{H}{N}\left[NIS^2 + (1-NIS)^2 CV_P^2\right]$$
+        <div style="font-size:0.82rem;color:var(--muted);margin-top:4px;">$CV_P$ = coefficient of variation among the poor. Incorporates inequality <em>within</em> the poor.</div>
+      </div>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>Poverty Gap Visualizer</h3>
+      <p>Each bar is a person's income. The red region above each poor person's bar is their income shortfall. Drag the poverty line and watch all measures update live.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-poverty" height="240"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl" style="min-width:160px;">
+          <label>Poverty line $Y_p$</label>
+          <input type="range" id="yp-pov" min="1" max="9" step="0.5" value="4" oninput="updatePoverty()">
+          <span class="val" id="yp-pov-val">4.0</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="graph-stat">H = <span id="H-val">—</span></span>
+        <span class="graph-stat">HI = <span id="HI-val">—</span></span>
+        <span class="graph-stat">TPG = <span id="TPG-val">—</span></span>
+        <span class="graph-stat">APG = <span id="APG-val">—</span></span>
+        <span class="graph-stat">NIS = <span id="NIS-val">—</span></span>
+      </div>
+    </div>
+
+    <div class="concept-block example-block">
+      <span class="tag tag-exam">Worked Example</span>
+      <h3>Computing All Poverty Measures</h3>
+      <p>Population of 5: incomes = {0, 1, 2, 6, 7}. Poverty line $Y_p = 3$.</p>
+      <div class="formula-box">
+        $H = 3$ (persons with $Y < 3$) &nbsp;|&nbsp; $HI = 3/5 = 0.60$<br><br>
+        $TPG = (3-0)+(3-1)+(3-2) = 3+2+1 = 6$<br>
+        $APG = 6/5 = 1.20$ &nbsp;|&nbsp; $NPG = 1.20/3 = 0.40$<br>
+        $AIS = 6/3 = 2.00$ &nbsp;|&nbsp; $NIS = 2.00/3 = 0.667$<br><br>
+        $$P_0 = HI = 0.60 \qquad P_1 = NPG = 0.40$$
+        $$P_2 = \frac{1}{5}\left[\left(\frac{3}{3}\right)^2+\left(\frac{2}{3}\right)^2+\left(\frac{1}{3}\right)^2\right] = \frac{1}{5}[1+0.44+0.11] = \frac{1.55}{5} = 0.311$$
+      </div>
+    </div>
+  </div>
+
+  <!-- T15 -->
+  <div class="notes-container" id="notes-15">
+    <div class="section-title">Topic 15 · Properties of Inequality & Poverty Measures</div>
+    <div class="section-subtitle">Anonymity · Scale · Population · Transfer · Monotonicity · Distributional Sensitivity</div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Concept</span>
+      <h3>The Inconsistency Problem</h3>
+      <ul>
+        <li>Different measures can rank countries differently — this does <em>not</em> mean one is right and another wrong.</li>
+        <li>Root cause: some income distribution comparisons are inherently ambiguous — e.g., <strong>crossing Lorenz curves</strong> (Country A has a more equal bottom half, Country B has a more equal top half — no unambiguous ranking).</li>
+        <li>Solution: understand the <em>properties</em> each measure satisfies, then choose the measure appropriate to your purpose.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Inequality</span>
+      <h3>Four Properties of Inequality Measures</h3>
+      <ul>
+        <li><strong>Anonymity:</strong> Measure doesn't depend on <em>who</em> holds the income — only the distribution matters. Most measures satisfy this; Group Gap measures do not.</li>
+        <li><strong>Scale Independence:</strong> Doubling everyone's income doesn't change inequality. Measured the same regardless of total economy size or currency. Both Kuznets and Gini satisfy this.</li>
+        <li><strong>Population Independence:</strong> Cloning the entire population doesn't change inequality. China shouldn't be penalised for being larger than Canada. Both satisfy this.</li>
+        <li><strong>Transfer Principle:</strong> Transferring income from a richer to a poorer person (without reversing their ranks) must reduce measured inequality. <strong>Kuznets fails</strong> — within-group transfers are invisible. <strong>Gini satisfies</strong> this.</li>
+      </ul>
+      <div class="formula-box" style="font-size:0.8rem;line-height:2;">
+        <div style="display:grid;grid-template-columns:auto 1fr 1fr;gap:4px 20px;">
+          <span style="color:var(--muted)">Property</span><span style="color:var(--accent2)">Kuznets Ratio</span><span style="color:var(--accent2)">Gini Coefficient</span>
+          <span>Anonymity</span><span>✓ Yes</span><span>✓ Yes</span>
+          <span>Scale Independence</span><span>✓ Yes</span><span>✓ Yes</span>
+          <span>Population Independence</span><span>✓ Yes</span><span>✓ Yes</span>
+          <span style="color:var(--accent3)">Transfer Principle</span><span style="color:var(--accent3)">✗ No</span><span>✓ Yes</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Poverty</span>
+      <h3>Four Properties of Poverty Measures</h3>
+      <ul>
+        <li><strong>Anonymity:</strong> Same as for inequality — only the income distribution matters, not identities. All measures satisfy this.</li>
+        <li><strong>Population Independence:</strong> Cloning the population leaves the measure unchanged. $H$ and $TPG$ fail (they double); $HI$ and $APG$ satisfy this.</li>
+        <li><strong>Monotonicity:</strong> Giving income to a poor person must reduce measured poverty. $H$ and $HI$ fail (only react when someone crosses the line). $TPG$ and $APG$ satisfy this.</li>
+        <li><strong>Distributional Sensitivity:</strong> Transferring from a poor person to a less-poor person must increase measured poverty. <em>None</em> of H, HI, TPG, APG satisfies this. Only $P_2$ (FGT with $\alpha=2$) does, via the $CV_P^2$ term.</li>
+      </ul>
+      <div class="formula-box" style="font-size:0.8rem;line-height:2;">
+        <div style="display:grid;grid-template-columns:auto 1fr 1fr 1fr 1fr;gap:4px 14px;">
+          <span style="color:var(--muted)">Property</span><span style="color:var(--accent2)">H</span><span style="color:var(--accent2)">HI</span><span style="color:var(--accent2)">TPG</span><span style="color:var(--accent2)">APG</span>
+          <span>Anonymity</span><span>✓</span><span>✓</span><span>✓</span><span>✓</span>
+          <span>Pop. Independence</span><span style="color:var(--accent3)">✗</span><span>✓</span><span style="color:var(--accent3)">✗</span><span>✓</span>
+          <span>Monotonicity</span><span style="color:var(--accent3)">✗</span><span style="color:var(--accent3)">✗</span><span>✓</span><span>✓</span>
+          <span style="color:var(--accent3)">Distrib. Sensitivity</span><span style="color:var(--accent3)">✗</span><span style="color:var(--accent3)">✗</span><span style="color:var(--accent3)">✗</span><span style="color:var(--accent3)">✗</span>
+        </div>
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted);margin-top:10px;">Only $P_2$ (FGT squared poverty gap, used by World Bank) satisfies all four properties.</p>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Policy</span>
+      <h3>Concluding Topics</h3>
+      <ul>
+        <li><strong>Choosing the right measure:</strong> To target aid by country size → use $H$ or $TPG$ (no population independence desired). To compare economic conditions across countries → use $HI$, $APG$, $NPG$, $AIS$, $NIS$ (population independence needed).</li>
+        <li><strong>Multidimensional Poverty Index (UNDP):</strong> Three dimensions — health, education, standard of living — measured at household level and aggregated. Analogous to HDI but for individuals.</li>
+        <li><strong>Policy options:</strong> In-kind transfers (food stamps, educational grants), targeted subsidies (food/fuel), incentivized transfers (conditional cash transfers — CCTs), direct financial transfers (minimum income guarantees).</li>
+      </ul>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof</span>
+      <h3>Why Kuznets Ratio Fails the Transfer Principle (Within Groups)</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Setup</span>
+        <div class="proof-step-body">The Kuznets Ratio uses only two group aggregates: the top 20% and the bottom 40%. Transfers <em>within</em> either group change no group aggregate.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Example</span>
+        <div class="proof-step-body">Consider three quintiles: Top 20% = 40, Second 20% = 10, Bottom 20% = 10. Kuznets Ratio = 40/20 = 2. Now transfer $1 from Second to Bottom (richer to poorer within the bot 40%):
+          <div class="formula-box">New: Top 20% = 40, Second 20% = 9, Bottom 20% = 11<br>New Kuznets Ratio = 40/(9+11) = 40/20 = 2. <strong>Unchanged!</strong></div>
+          The transfer correctly made the economy more equal, but the Kuznets Ratio is blind to it — it violates the transfer principle.
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Gini</span>
+        <div class="proof-step-body">The Gini integrates over the entire Lorenz curve, so any redistribution that moves the Lorenz curve toward the 45° line — no matter where in the distribution — necessarily reduces $G$. Thus Gini satisfies the transfer principle for all transfers that don't reverse income ranks.</div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+  </div>
+
+  <!-- T16 -->
+  <div class="notes-container" id="notes-16">
+    <div class="section-title">Topic 16 · Urbanization I</div>
+    <div class="section-subtitle">Harris-Todaro Model · Urban Unemployment · Expected Wages</div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Background</span>
+      <h3>Lewis Two-Sector Model — Limitations</h3>
+      <ul>
+        <li>Lewis assumes workers can instantly move between rural and urban sectors depending on job availability.</li>
+        <li><strong>Problem 1:</strong> Urban migration massively outstrips labor demand — creates large unemployment, which Lewis ignores.</li>
+        <li><strong>Problem 2:</strong> Rural wages appear to be set at marginal product, not a subsistence floor.</li>
+        <li>Harris-Todaro (1970) corrects both by modeling the <em>decision to migrate</em> under uncertainty.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Model</span>
+      <h3>Harris-Todaro Structure</h3>
+      <ul>
+        <li>Two sectors: <strong>Agriculture</strong> (competitive, flexible wages) and <strong>Manufacturing</strong> (fixed wage above market).</li>
+        <li>Manufacturing wage $\bar{W}_M$ is fixed above equilibrium — e.g., by minimum wage law.</li>
+        <li>Factories hire from the pool of urban residents (not from the countryside directly).</li>
+        <li>Migrants move <em>without a job guarantee</em> — they gamble on getting hired.</li>
+        <li>Two types of urban workers: <strong>employed</strong> (hired) and <strong>unemployed</strong> (searching).</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Formula</span>
+      <h3>Equilibrium Condition — Expected Wage</h3>
+      <p>A rural worker will migrate as long as the expected urban wage exceeds the agricultural wage $W_A$.</p>
+      <div class="formula-box">
+        $$E[W_{\text{urban}}] = \frac{L_M}{L_{US}} \cdot \bar{W}_M$$
+        <div style="font-size:0.82rem;color:var(--muted);margin-top:6px;">$L_M$ = number of manufacturing jobs (fixed) &nbsp;|&nbsp; $L_{US}$ = total urban labor supply (employed + unemployed)</div>
+      </div>
+      <p style="margin-top:8px;">Migration continues until equilibrium:</p>
+      <div class="formula-box">
+        $$W_A = \frac{L_M}{L_{US}} \cdot \bar{W}_M$$
+      </div>
+      <ul>
+        <li>$\bar{W}_M$ and $L_M$ are fixed. Only $L_{US}$ adjusts — through the unemployment pool $L_{US} = L_M + L_{\text{unemployed}}$.</li>
+        <li>Higher unemployment = lower probability of getting hired = lower expected wage → equilibrates the market.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>Harris-Todaro Equilibrium</h3>
+      <p>The urban labor market equilibrates through unemployment. Drag sliders to change the manufacturing wage or job count, and watch how equilibrium urban unemployment adjusts.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-ht" height="240"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl">
+          <label>Mfg wage $\bar{W}_M$</label>
+          <input type="range" id="wm-ht" min="1.5" max="5" step="0.1" value="3" oninput="updateHT()">
+          <span class="val" id="wm-ht-val">3.0</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Mfg jobs $L_M$</label>
+          <input type="range" id="lm-ht" min="10" max="60" step="2" value="30" oninput="updateHT()">
+          <span class="val" id="lm-ht-val">30</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Agricultural wage $W_A$</label>
+          <input type="range" id="wa-ht" min="0.5" max="3" step="0.1" value="1.5" oninput="updateHT()">
+          <span class="val" id="wa-ht-val">1.5</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="graph-stat">Eq. urban supply $L_{US}^*$ = <span id="lus-val">—</span></span>
+        <span class="graph-stat">Unemployment = <span id="unemp-val">—</span></span>
+        <span class="graph-stat">Unemployment rate = <span id="urate-val">—</span></span>
+      </div>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Exam Focus</span>
+      <h3>Counter-Intuitive Implications</h3>
+      <ul>
+        <li><strong>Raising manufacturing wages increases unemployment:</strong> Higher $\bar{W}_M$ → higher expected urban wage → more rural migrants → bigger unemployment pool to restore equilibrium.</li>
+        <li><strong>Creating more manufacturing jobs can increase unemployment:</strong> More jobs ($\uparrow L_M$) → higher probability of employment → more people migrate → net unemployment may rise if migration > job creation.</li>
+        <li><strong>Rural education can backfire:</strong> Training rural workers to be more productive in manufacturing raises incentive to migrate → increases urban unemployment without necessarily raising rural output.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof</span>
+      <h3>Deriving the Equilibrium Urban Labor Supply $L_{US}^*$</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Given</span>
+        <div class="proof-step-body">Equilibrium condition: $W_A = \frac{L_M}{L_{US}} \bar{W}_M$. Solve for $L_{US}^*$.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">Rearrange:
+          <div class="formula-box">$$L_{US}^* = \frac{L_M \cdot \bar{W}_M}{W_A}$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">Urban unemployment in equilibrium:
+          <div class="formula-box">$$L_{\text{unemp}}^* = L_{US}^* - L_M = L_M\left(\frac{\bar{W}_M}{W_A} - 1\right) = L_M \cdot \frac{\bar{W}_M - W_A}{W_A}$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 3</span>
+        <div class="proof-step-body">Unemployment rate:
+          <div class="formula-box">$$u^* = \frac{L_{\text{unemp}}^*}{L_{US}^*} = 1 - \frac{W_A}{\bar{W}_M}$$</div>
+          As $\bar{W}_M \uparrow$, $u^* \uparrow$. As $W_A \uparrow$, $u^* \downarrow$. More jobs ($\uparrow L_M$) raises $L_{US}^*$ by the same factor, leaving $u^*$ unchanged — but <em>total</em> unemployment rises.
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+  </div>
+
+  <!-- T17 -->
+  <div class="notes-container" id="notes-17">
+    <div class="section-title">Topic 17 · Urbanization II</div>
+    <div class="section-subtitle">Agglomeration · Giantism · Slums · Informal Sector</div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Concept</span>
+      <h3>Why Do Cities Exist? Agglomeration Economies</h3>
+      <ul>
+        <li><strong>Urban clustering:</strong> The tendency of related businesses, workers, and consumers to co-locate to reduce costs.</li>
+        <li><strong>Localization economies:</strong> Cost advantages specific to firms in the same industry co-locating — lower input transport costs, specialized suppliers (e.g., auto-parts suppliers around Detroit).</li>
+        <li><strong>Urbanization economies:</strong> General advantages of being in a city — social capital, shared infrastructure, thick labor markets, knowledge spillovers.</li>
+        <li>Location often determined by historical accident (Silicon Valley), trade routes (Chicago), or initial specialization.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Concept</span>
+      <h3>Limits to Urban Scale — Congestion</h3>
+      <ul>
+        <li>Congestion = "an action by one agent that decreases incentives for other agents to take similar actions."</li>
+        <li><strong>Land:</strong> Becomes scarce and expensive → builds vertically instead of horizontally.</li>
+        <li><strong>Transportation:</strong> Commuting distances and times increase.</li>
+        <li><strong>Wages:</strong> Must rise to compensate workers for higher cost of living → raises all prices.</li>
+        <li>Result: Cities are naturally bounded — HICs have multiple cities rather than one mega-city.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Key Concept</span>
+      <h3>Urban Giantism Paradox</h3>
+      <p>LICs often have disproportionately large primate cities — the "giantism paradox." Three causes:</p>
+      <ul>
+        <li><strong>First-city bias:</strong> Once a city establishes dominance, increasing returns reinforce its lead.</li>
+        <li><strong>Protectionism:</strong> Without trade, production must locate near the largest domestic market (the biggest city), attracting more workers there in a self-reinforcing spiral.</li>
+        <li><strong>Political economy:</strong> Dictators concentrate resources in capital cities to prevent urban unrest and maintain patronage. Countries with unstable authoritarian regimes have systematically larger capital cities.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Concept</span>
+      <h3>Urban Slums</h3>
+      <ul>
+        <li>~1/3 of all urban residents in developing countries live in slums (dense housing failing basic standards).</li>
+        <li><strong>UN definition:</strong> A slum household lacks at least one of: (1) durable housing, (2) sufficient living space (≤3 per room), (3) safe water access, (4) adequate sanitation, (5) security of tenure.</li>
+        <li><strong>Why do slums exist?</strong> Poverty + weak institutions. Poor cannot afford code-compliant housing; building codes exist in most countries but enforcement is weak due to corruption, limited government capacity, and the large fraction of individuals unable to afford minimum housing.</li>
+        <li>Lack of tenure security → no incentive to invest in improving housing.</li>
+        <li>30-40% of non-permanent slum housing is in disaster-prone zones.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Exam Focus</span>
+      <h3>Informal Sector</h3>
+      <ul>
+        <li>Sector that does not formally register, pay taxes, or receive government benefits. Represents 30-70% of urban employment in LICs.</li>
+        <li><strong>Positives:</strong> Generates employment without state support; labor-intensive (good when capital is scarce); includes recycling, low-cost training, black markets that improve efficiency around price controls.</li>
+        <li><strong>Problems:</strong> No regulation → environmental harm, safety issues, no benefits. Encourages slum development. Women are disproportionately concentrated here.</li>
+        <li><strong>Policy:</strong> Reduce registration red tape; subsidize/develop key informal industries; facilitate credit access.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block example-block">
+      <span class="tag tag-exam">Worked Example</span>
+      <h3>Giantism via Political Economy: First-City Feedback Loop</h3>
+      <p>Country has 2 cities: Capital C₁ (population 2M) and secondary C₂ (population 0.5M). A dictator routes 80% of infrastructure investment to C₁.</p>
+      <div class="formula-box">
+        Round 1: C₁ gets better roads, hospitals, jobs → firms prefer C₁ → 200k people migrate from C₂<br>
+        Round 2: C₁ now has 2.2M → even larger consumer base → more firms → more infrastructure<br>
+        $$\text{First-city share} = \frac{2.2}{2.2+0.3} = 88\% \quad (\text{up from } \frac{2}{2.5} = 80\%)$$
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted)">This is the paradox: the largest city grows fastest not because it is most efficient, but because political distortions create self-reinforcing agglomeration. The efficient city sizes predicted by agglomeration economies alone are never reached.</p>
+    </div>
+  </div>
+
+  <!-- T18 -->
+  <div class="notes-container" id="notes-18">
+    <div class="section-title">Topic 18 · Environment I</div>
+    <div class="section-subtitle">Tragedy of the Commons · Public Goods · Property Rights</div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Framework</span>
+      <h3>Economists' Approach to Environmental Problems</h3>
+      <ul>
+        <li>Pollution and resource depletion are not inherently bad — they are <em>costs</em> that must be weighed against the utility of the activities that produce them.</li>
+        <li>Focus: find the <strong>market failure</strong> causing over-production of pollutants or over-use of resources, then correct it.</li>
+        <li>Goal is <em>efficiency</em> (Pareto optimality) — not necessarily zero pollution.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Concept</span>
+      <h3>Perfect Property Rights — Four Criteria</h3>
+      <p>The fundamental theorem of welfare economics (markets are Pareto optimal) requires <em>perfect property rights</em>:</p>
+      <div class="formula-box" style="font-size:0.82rem;line-height:2.2;">
+        <strong>Universality</strong> — all resources are privately owned<br>
+        <strong>Excludability</strong> — owner can prevent others from using the resource<br>
+        <strong>Transferability</strong> — ownership can be reassigned (bought/sold)<br>
+        <strong>Enforceability</strong> — ownership rights and contracts can be enforced
+      </div>
+      <p style="margin-top:8px;font-size:0.82rem;color:var(--muted)">Environmental problems arise when one or more of these fails — most importantly, <strong>excludability</strong>.</p>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Model</span>
+      <h3>Tragedy of the Commons</h3>
+      <ul>
+        <li>Applies to goods that are <strong>rivalrous</strong> (my use reduces value to others) but <strong>non-excludable</strong> (no one can be prevented from using).</li>
+        <li>Examples: fisheries, grazing land, aquifers, shared oil fields.</li>
+        <li><strong>With excludability (owned fishery):</strong> Owner maximises profit → chooses $L^*$ fishermen (Pareto optimal).</li>
+        <li><strong>Without excludability (open fishery):</strong> Any fisherman fishes as long as average product ≥ wage $w$. Results in $L_C > L^*$ (over-use), with marginal product below wage $w$ → workers could be more productively employed elsewhere.</li>
+      </ul>
+      <div class="formula-box">
+        $$\text{Owner's condition: } MP_L = w \quad \Rightarrow \quad L^* \text{ (efficient)}$$
+        $$\text{Open access condition: } AP_L = w \quad \Rightarrow \quad L_C > L^* \text{ (over-use)}$$
+      </div>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Model</span>
+      <h3>Public Goods & Free Rider Problem</h3>
+      <ul>
+        <li><strong>Public goods:</strong> <em>Non-rivalrous</em> (my use doesn't reduce yours) AND <em>non-excludable</em>.</li>
+        <li>Examples: clean air, national defense, lighthouses, a university tower (the UT Tower example).</li>
+        <li><strong>Demand aggregation:</strong> For rivalrous goods, aggregate demand = horizontal sum of individual demands. For public goods, aggregate demand = <strong>vertical sum</strong> (everyone benefits from the same unit simultaneously).</li>
+        <li><strong>Free rider problem:</strong> If others will provide the good anyway, each individual prefers to pay nothing and free-ride. Neither person provides the social optimum → <strong>under-provision</strong>.</li>
+        <li>The social optimum requires that the sum of marginal valuations equals marginal cost: $\sum_i MB_i = MC$.</li>
+      </ul>
+      <div class="formula-box">
+        $$\text{Rivalrous: } Q^* \text{ where } MB_A(Q^*) = P_M \text{ or } MB_B(Q^*) = P_M$$
+        $$\text{Non-rivalrous: } Q^* \text{ where } MB_A(Q^*) + MB_B(Q^*) = P_M$$
+      </div>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>Tragedy of the Commons — Optimal vs Open-Access Fishing</h3>
+      <p>The owner picks $L^*$ where $MP_L = w$. Open access expands to $L_C$ where $AP_L = w$. Drag the wage slider to see how over-use scales with the wage gap.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-commons" height="240"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl">
+          <label>Outside wage <em>w</em></label>
+          <input type="range" id="w-commons" min="0.5" max="4" step="0.1" value="2" oninput="updateCommons()">
+          <span class="val" id="w-commons-val">2.0</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Fishery productivity <em>A</em></label>
+          <input type="range" id="a-commons" min="5" max="20" step="1" value="10" oninput="updateCommons()">
+          <span class="val" id="a-commons-val">10</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="graph-stat">$L^*$ (optimal) = <span id="lstar-commons">—</span></span>
+        <span class="graph-stat">$L_C$ (open access) = <span id="lc-commons">—</span></span>
+        <span class="graph-stat">Over-use = <span id="over-commons">—</span></span>
+      </div>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof</span>
+      <h3>$L_C > L^*$ — Open Access Always Leads to Over-Use</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Setup</span>
+        <div class="proof-step-body">Let total output $Y = f(L)$ with $f' > 0$, $f'' < 0$ (increasing but concave). Marginal product: $MP_L = f'(L)$. Average product: $AP_L = f(L)/L$.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">Owner's optimal: $MP_L(L^*) = w$, so $f'(L^*) = w$.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">Open access: fishermen enter until average product equals wage: $AP_L(L_C) = w$, so $f(L_C)/L_C = w$.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 3</span>
+        <div class="proof-step-body">Show $AP_L > MP_L$ for all $L > 0$ when $f$ is concave. By the mean value theorem applied to $f$:
+          <div class="formula-box">$$\frac{f(L)}{L} = \frac{f(L) - f(0)}{L - 0} = f'(\xi) \text{ for some } \xi \in (0,L)$$</div>
+          Since $f'' < 0$, $f'$ is decreasing, so $f'(\xi) > f'(L)$ for $\xi < L$. Therefore:
+          <div class="formula-box">$$AP_L(L) = f'(\xi) > f'(L) = MP_L(L) \quad \forall\, L > 0$$</div>
+        </div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 4</span>
+        <div class="proof-step-body">At $L^*$: $MP_L(L^*) = w$ and $AP_L(L^*) > MP_L(L^*) = w$. So open-access fishermen still find it profitable to enter at $L^*$ (average product exceeds wage). They keep entering until $AP_L(L_C) = w$, with $L_C > L^*$.
+          <div class="formula-box">$$\boxed{L_C > L^*} \quad \text{Open access always over-uses the resource.}$$</div>
+        </div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+
+    <div class="concept-block example-block">
+      <span class="tag tag-exam">Worked Example</span>
+      <h3>Finding $L^*$ and $L_C$ with $f(L) = A\sqrt{L}$</h3>
+      <p>Let $f(L) = 10\sqrt{L}$, wage $w = 2$.</p>
+      <div class="formula-box">
+        $MP_L = f'(L) = \frac{10}{2\sqrt{L}} = \frac{5}{\sqrt{L}}$<br><br>
+        <strong>Owner's optimum:</strong> $\frac{5}{\sqrt{L^*}} = 2 \Rightarrow \sqrt{L^*} = 2.5 \Rightarrow L^* = 6.25$<br><br>
+        $AP_L = \frac{f(L)}{L} = \frac{10}{\sqrt{L}}$<br><br>
+        <strong>Open access:</strong> $\frac{10}{\sqrt{L_C}} = 2 \Rightarrow \sqrt{L_C} = 5 \Rightarrow L_C = 25$
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted)">$L_C = 25$ vs $L^* = 6.25$ — open access attracts <strong>4×</strong> too many fishermen! Output at $L^*$: $f(6.25) = 25$. Output at $L_C$: $f(25) = 50$. Total wages at $L_C$: $25 \times 2 = 50$. Profit = 0. The entire surplus is dissipated — the fishery generates no net value above the outside option.</p>
+    </div>
+  </div>
+
+  <!-- T19 -->
+  <div class="notes-container" id="notes-19">
+    <div class="section-title">Topic 19 · Environment II</div>
+    <div class="section-subtitle">Particulate Matter · Global Warming · Water · Slums · Policy</div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Concept</span>
+      <h3>Particulate Matter (PM)</h3>
+      <ul>
+        <li><strong>Definition:</strong> Very small particles of matter under 10 microns in size. The <em>size</em> of the particle matters most — composition is secondary.</li>
+        <li><strong>PM10 vs PM2.5:</strong> PM10 was measured first; PM2.5 introduced later. PM2.5 is more dangerous because smaller particles penetrate deeper.</li>
+        <li><strong>Health mechanism:</strong> Small size lets particles evade the body's natural defenses (cilia, cellular barriers). They cause lung inflammation and enter the bloodstream — leading to cardio-pulmonary disorders, worsening asthma, bronchitis, and premature death.</li>
+        <li><strong>Sources:</strong> Any combustion process — directly or via secondary reactions with NOx. Most problematic: industrial combustion, coal electricity generation, burning crop residue (huge problem in India), and indoor biomass burning for cooking/heating.</li>
+        <li><strong>Key research (Duflo, Greenstone, Hanna):</strong> Indoor biomass burning is particularly dangerous for women and children in LICs — stoves without ventilation expose occupants to extreme PM concentrations daily.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Concept</span>
+      <h3>Global Warming</h3>
+      <p>Higher concentrations of CO2 and industrial chemicals (HFCs, CFCs) retain solar heat that would otherwise radiate back into space, raising Earth's temperature.</p>
+      <ul>
+        <li><strong>Primary challenges:</strong> Rising sea levels, greater temperature variation, more frequent and powerful storms, shifts in local climate patterns, reduced agricultural productivity in semi-arid regions.</li>
+        <li><strong>Rising sea levels:</strong> Devastating for low-lying islands (Oceania, Caribbean), forces migration, destroys property and infrastructure.</li>
+        <li><strong>Storm intensity:</strong> Tropical cyclones more frequent and powerful — especially dangerous in LICs with poor construction quality, fragile infrastructure, and limited disaster response capacity.</li>
+        <li><strong>LICs uniquely vulnerable:</strong> High household reliance on farming and fishing. Poor construction cannot withstand disasters. Fragile political systems can fracture — the Darfur crisis may have been triggered by climate-driven drought.</li>
+        <li><strong>Agricultural impact:</strong> Productivity of semi-arid regions falls (shorter growing seasons, adverse conditions). A few highland areas (e.g., Ethiopia highlands) may benefit — but net losses far exceed gains globally.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Concept</span>
+      <h3>Water</h3>
+      <ul>
+        <li>Access to clean water increasingly called the new "oil" — central to international conflicts (China-India, Middle East).</li>
+        <li><strong>Three major water issues in LICs:</strong>
+          <ol style="margin-top:8px;padding-left:18px;line-height:2.2;font-size:0.85rem;">
+            <li>Pollution of waterways and shorelines — industrial waste, raw sewage, agricultural run-off.</li>
+            <li>Open sewage systems in urban areas — flood risk, disease outbreak, contamination of groundwater.</li>
+            <li>Lack of access to clean drinking water — tap water in many LIC cities is untreated and unsafe by HIC standards.</li>
+          </ol>
+        </li>
+        <li><strong>Glacial dependence:</strong> Many LIC populations depend on glacial meltwater for drinking and irrigation. Accelerating glacier retreat threatens long-run water security.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Concept</span>
+      <h3>Slum Environments</h3>
+      <p>The urban poor face a compounding set of environmental harms:</p>
+      <ul>
+        <li><strong>Air pollution:</strong> Indoor pollution from adjacent households. Outdoor pollution from nearby factories and automobiles — slums are often located near industrial zones.</li>
+        <li><strong>Water:</strong> Open sewers that can flood. Lack of access to clean drinking water. Proximity to polluted waterways with untreated sewage and industrial waste.</li>
+        <li><strong>Interactions:</strong> Environmental harms compound each other and interact with poverty — sick workers earn less, families cannot afford to move, and poor areas receive fewer municipal services.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Policy</span>
+      <h3>Policy Options</h3>
+      <ul>
+        <li>A wide range of policy options exist — from carbon taxes and cap-and-trade to international agreements, technology subsidies, and infrastructure investments.</li>
+        <li><strong>Key constraint:</strong> Solutions almost always require coordinated action by <em>both</em> developed and developing countries. Developed countries are historically responsible for most cumulative emissions; developing countries account for most future emissions growth.</li>
+        <li>This creates a fundamental collective action problem — individual country incentives diverge from global optimum (classic public goods/externality failure at international scale).</li>
+      </ul>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>PM2.5 Exposure vs Health Burden</h3>
+      <p>The dose-response relationship between PM2.5 concentration and health damage is approximately log-linear. Adjust baseline concentration and sensitivity to see how health costs scale — and why small reductions at high exposure levels yield disproportionate benefits.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-pm" height="230"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl">
+          <label>Sensitivity $\beta$</label>
+          <input type="range" id="pm-beta" min="0.5" max="3" step="0.1" value="1.5" oninput="updatePM()">
+          <span class="val" id="pm-beta-val">1.5</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>WHO limit (μg/m³)</label>
+          <input type="range" id="pm-limit" min="5" max="25" step="1" value="10" oninput="updatePM()">
+          <span class="val" id="pm-limit-val">10</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="graph-stat">Health cost at WHO limit: <span id="pm-who-val">—</span></span>
+        <span class="graph-stat">Health cost at Delhi avg (100 μg/m³): <span id="pm-delhi-val">—</span></span>
+        <span class="graph-stat">Ratio Delhi/WHO: <span id="pm-ratio-val">—</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- T20 -->
+  <div class="notes-container" id="notes-20">
+    <div class="section-title">Topic 20 · Gender & Sex Ratios</div>
+    <div class="section-subtitle">Gender Inequality · Missing Women · Fischer's Principle · Son Preference</div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Overview</span>
+      <h3>Gender Inequality in Development</h3>
+      <ul>
+        <li>Gender discrimination is a global problem but far more severe in LICs. The status of women is <em>crucial</em> for development:</li>
+        <li>Direct impact on wellbeing of half the population. Women make up half the potential labor force — discrimination inefficiently allocates jobs to relatively less productive men.</li>
+        <li>Women's status is directly associated with child health, education outcomes, and demographic transition.</li>
+        <li><strong>Evidence sources:</strong> Economist Intelligence Unit Women's Economic Opportunity Index, UN Gender Inequality Index, legal rights data, household resource allocation surveys, cultural attitude surveys.</li>
+        <li><strong>Key empirical facts:</strong> In many LICs, women cannot hold the same jobs as men by law; married men and women lack equal property rights; large fractions of women are excluded from decisions about their own income; significant shares of women agree wife-beating can be justified; majorities believe men make better leaders.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Concept</span>
+      <h3>Missing Women</h3>
+      <p>Term coined by Nobel laureate Amartya Sen. The observed ratio of males to females in many LICs is much higher than the biological norm — implying that a significant number of women are "missing" due to excess female mortality.</p>
+      <ul>
+        <li><strong>Causes by life stage:</strong>
+          <ul style="margin-top:6px;font-size:0.83rem;">
+            <li><em>At birth:</em> Sex-selective abortion (ultrasound used to identify female fetuses) and infanticide — especially severe under China's one-child policy.</li>
+            <li><em>Ages 2–5:</em> Oster (2008) finds this is where most of the imbalance in India emerges. Vaccination differences explain 20–30%; malnutrition explains 20%.</li>
+            <li><em>Adulthood:</em> Unequal access to nutrition and medical care; high maternal mortality rates.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Formula</span>
+      <h3>Missing Women Calculation</h3>
+      <p>Let $r_a$ = actual sex ratio (males/females), $r_e$ = expected (biological) sex ratio, $m_a$ = actual males, $f_a$ = actual females, $f_e$ = expected females.</p>
+      <div class="formula-box">
+        $$\frac{f_a}{f_e} = \frac{r_e}{r_a}$$
+        Natural birth ratio: $r_e = 1.06$<br><br>
+        If actual birth ratio $r_a = 1.14$:<br>
+        $$\frac{f_a}{f_e} = \frac{1.06}{1.14} \approx 0.930 \implies 7\% \text{ of girls are missing}$$
+      </div>
+      <ul>
+        <li><strong>Assumption:</strong> The number of actual men equals expected men ($m_a = m_e$), so any deviation in the sex ratio must come from missing women.</li>
+        <li><strong>China 2020 example:</strong> 10 million births, sex ratio at birth = 1.11. $f_a/f_e = 1.06/1.11 = 0.955$ → 4.5% of girls missing. With 4.7M girls born, expected = 4.9M → ~200,000 missing girls at birth in a single year.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block proof-block">
+      <span class="tag" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Proof</span>
+      <h3>Fischer's Principle: Why 1:1 Sex Ratio is a Stable Equilibrium</h3>
+      <div class="proof-step">
+        <span class="proof-step-num">Setup</span>
+        <div class="proof-step-body">Some individuals have a genetic predisposition to produce more boys or more girls (like eye color). We ask: what sex ratio is evolutionarily stable?</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 1</span>
+        <div class="proof-step-body">At ratio 1:1, men and women have equal probability of reproducing. The propensity to produce boys vs girls is equally represented — no sex has an advantage. This is an equilibrium.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 2</span>
+        <div class="proof-step-body">Suppose more women than men exist (ratio $< 1$). Men are scarce, so men find mates more easily — each man produces more offspring than each woman. Parents who produce more sons will have more grandchildren. Genes for producing boys spread through the population → ratio rises back toward 1.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Step 3</span>
+        <div class="proof-step-body">By the symmetric argument, if men are more common (ratio $> 1$), women find mates more easily. Genes for producing girls spread → ratio falls back toward 1. Therefore 1:1 is the unique evolutionarily stable sex ratio.</div>
+      </div>
+      <div class="proof-step">
+        <span class="proof-step-num">Implication</span>
+        <div class="proof-step-body">Any sustained deviation from 1:1 at sexual maturity is evidence of <em>excess mortality</em> in the underrepresented sex — it cannot be a biological equilibrium. In countries where adult sex ratios substantially exceed 1.0 (e.g., China ~1.06), the deviation implies missing women due to social, cultural, or policy factors.</div>
+      </div>
+      <div class="qed">∎ Q.E.D.</div>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-exam">Exam Focus</span>
+      <h3>Reasons for Son Preference & Consequences</h3>
+      <p><strong>Son preference drivers</strong> (patrilineal cultures):</p>
+      <ul>
+        <li>Family names and inheritance rights pass through sons.</li>
+        <li>Old age support — sons expected to care for parents; daughters "lost" to husband's family.</li>
+        <li>Dowries — families must pay when daughters marry, making daughters a financial liability.</li>
+        <li>Better labor force opportunities for men → higher expected lifetime earnings.</li>
+        <li>Family, social, and religious pressure.</li>
+      </ul>
+      <p style="margin-top:12px;"><strong>Qian (2008) — Economic status reduces son preference:</strong> In China, Maoist reforms promoted tea cultivation (favors smaller hands = women) vs orchard fruits (favors men). Tea areas → 10% more income for women → 1% more girls surviving to adulthood. Economic empowerment, not just policy, shapes sex ratios.</p>
+      <p style="margin-top:12px;"><strong>Consequences of skewed ratios:</strong></p>
+      <ul>
+        <li>Men: delayed or forgone marriage as women are simply scarce. Worsens with successive generations of skewed ratios. Poorest men most affected (women marry into higher-status families).</li>
+        <li>Women: families may over-emphasize women's roles as mothers and wives rather than economic actors — potentially worsening gender inequality.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>Sex Ratio by Age — Natural vs Skewed</h3>
+      <p>In a normal population (e.g., Switzerland), the sex ratio starts at 1.06 at birth and falls below 1 by old age as men die earlier. Adjust the "son preference" slider to see how a skewed birth ratio distorts the age profile.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-sexratio" height="230"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl">
+          <label>Son preference (birth ratio excess)</label>
+          <input type="range" id="sr-pref" min="0" max="0.15" step="0.01" value="0.09" oninput="updateSexRatio()">
+          <span class="val" id="sr-pref-val">0.09</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Adult male excess mortality</label>
+          <input type="range" id="sr-mort" min="0" max="0.04" step="0.005" value="0.02" oninput="updateSexRatio()">
+          <span class="val" id="sr-mort-val">0.020</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="graph-stat">Birth ratio (skewed): <span id="sr-birth-val">—</span></span>
+        <span class="graph-stat">% missing women at birth: <span id="sr-missing-val">—</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- T21 -->
+  <div class="notes-container" id="notes-21">
+    <div class="section-title">Topic 21 · Agriculture I</div>
+    <div class="section-subtitle">Why Agriculture Matters · Structural Transformation · Three Steps</div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Overview</span>
+      <h3>Why Agriculture Matters</h3>
+      <ul>
+        <li><strong>Scale:</strong> 2 billion people involved in farming worldwide. 3.1 billion lived in rural areas in 2010 — with 1/4 in extreme poverty.</li>
+        <li>2/3 of the world's poorest are located in rural areas, usually engaged in subsistence agriculture.</li>
+        <li>In 2009, 1 billion people did not have enough food — meaning they could not meet basic nutritional requirements.</li>
+        <li><strong>Historical neglect:</strong> Classic models (Lewis) treated agriculture as passive — a source of surplus labour for manufacturing. Modern understanding: agriculture must develop <em>alongside</em> urban sectors, not just feed them.</li>
+        <li><strong>Rural development elements:</strong> Improved productivity (technology, reorganisation, policy), increased demand through urban growth, diversification into non-farming rural activities.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-model">Model</span>
+      <h3>Structural Transformation (Timmer 2007)</h3>
+      <p>As countries develop, agriculture's share of GDP and employment systematically falls. Four stages of transformation:</p>
+      <ol style="padding-left:18px;line-height:2.4;font-size:0.85rem;">
+        <li><strong>Agricultural productivity surplus:</strong> Technology and organisation raise farm output above subsistence needs, creating a surplus.</li>
+        <li><strong>Surplus transferred to urban sector:</strong> Via investment flows, taxation of agriculture, or price controls on food — funds manufacturing growth.</li>
+        <li><strong>Progressive integration:</strong> Agricultural and non-agricultural input, output, and labour markets become progressively integrated — prices converge, workers move freely.</li>
+        <li><strong>Full development:</strong> Agriculture becomes just another sector in the economy — small share of GDP, highly productive, fully market-integrated.</li>
+      </ol>
+      <p style="font-size:0.82rem;color:var(--muted);margin-top:8px;">Today in the US, there are more lawyers and dry cleaners than farmers — illustrating full structural transformation. Most LICs are in stages 1-2.</p>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Concept</span>
+      <h3>Three Steps of Agriculture</h3>
+      <div class="formula-box" style="font-size:0.82rem;line-height:2.2;">
+        <div style="display:grid;grid-template-columns:1fr 2fr 1fr;gap:6px 20px;">
+          <span style="color:var(--accent)">Stage</span><span style="color:var(--accent)">Characteristics</span><span style="color:var(--accent)">Risk level</span>
+          <span>Subsistence</span><span>Staple crops only, family labour, no surplus, extremely vulnerable to harvest failure → hunger</span><span>Extreme</span>
+          <span>Transition</span><span>Expand land, add cash crops (coffee, tea, vegetables), better technology, hire some labour</span><span>Moderate</span>
+          <span>Commercial</span><span>Profit-maximising, optimal input mix (mechanisation, fertiliser, irrigation, hybrid seeds), very productive</span><span>Low</span>
+        </div>
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted);margin-top:8px;">The key barrier to moving from subsistence to transition is <strong>risk</strong>: higher-yield crops are more sensitive to environmental conditions. Farmers near subsistence cannot afford to risk a failed harvest — creating an agricultural poverty trap.</p>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>Structural Transformation — Agriculture Share vs Development</h3>
+      <p>As per capita income rises, agriculture's share of GDP falls along an inverse relationship. Adjust parameters to see how speed and starting point affect the transformation path.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-agri" height="230"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl">
+          <label>Transformation speed</label>
+          <input type="range" id="agri-speed" min="0.5" max="3" step="0.1" value="1.5" oninput="updateAgri()">
+          <span class="val" id="agri-speed-val">1.5</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Starting ag share (%)</label>
+          <input type="range" id="agri-start" min="40" max="80" step="5" value="60" oninput="updateAgri()">
+          <span class="val" id="agri-start-val">60</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Floor (modern ag min %)</label>
+          <input type="range" id="agri-floor" min="1" max="10" step="0.5" value="2" oninput="updateAgri()">
+          <span class="val" id="agri-floor-val">2.0</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="graph-stat">Ag share at $5k GNI: <span id="agri-5k">—</span></span>
+        <span class="graph-stat">Ag share at $20k GNI: <span id="agri-20k">—</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- T22 -->
+  <div class="notes-container" id="notes-22">
+    <div class="section-title">Topic 22 · Agriculture II</div>
+    <div class="section-subtitle">Productivity · Technology Adoption · Crop Insurance · Green Revolution</div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Concept</span>
+      <h3>Agricultural Productivity Gaps</h3>
+      <ul>
+        <li>Agricultural productivity (output per worker and output per hectare) varies enormously across countries and regions.</li>
+        <li>Despite technological advances, productivity in developing countries — especially Africa — remains very low.</li>
+        <li><strong>Two primary barriers to technology adoption:</strong>
+          <ul style="margin-top:8px;font-size:0.83rem;">
+            <li><em>Prevailing farm structures:</em> In Latin America, farms are often too large to manage efficiently with available labour. In Africa, farms are too small to justify mechanisation — fixed costs can't be spread over enough output.</li>
+            <li><em>Agricultural poverty trap:</em> Higher-yield crop varieties are more sensitive to environmental conditions and require more inputs — they are <strong>riskier</strong>. Farmers living near the subsistence level cannot tolerate the risk of crop failure. This traps them in low-productivity farming even when better technology exists.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Concept</span>
+      <h3>Crop Insurance & Moral Hazard</h3>
+      <ul>
+        <li><strong>Why crop insurance is difficult:</strong> Standard yield-based insurance (pays out based on volume grown on a plot) suffers from severe <strong>moral hazard</strong> — farmers can cut back on irrigation, fertiliser, and other investments knowing they'll be compensated for poor yields.</li>
+        <li><strong>Rainfall insurance:</strong> Pays off based on the characteristics of rainfall (e.g., total rainfall in a season, number of dry days) rather than actual yield.
+          <ul style="margin-top:6px;font-size:0.83rem;">
+            <li><em>Advantage:</em> Eliminates moral hazard — farmers cannot affect rainfall so they maintain full investment incentives.</li>
+            <li><em>Challenge 1 — Reinsurance:</em> Rainfall is a regional risk. An insurer needs to distribute risk across many uncorrelated regions — requires significant scale.</li>
+            <li><em>Challenge 2 — Basis risk:</em> Need to estimate the probability distribution of rainfall at the micro-climate level affecting specific farmers. Often numerous micro-climates with little historical data.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="concept-block">
+      <span class="tag tag-key">Core Concept</span>
+      <h3>The Green Revolution</h3>
+      <ul>
+        <li><strong>Historical context:</strong> English wheat yields rose from 0.5 to 2 tons/hectare between 900 AD and 1900 AD, then jumped to 7 tons/hectare in the 20th century — driven by fertilisers, plant breeding, pesticides, growing techniques, and mechanisation. Production in LICs did <em>not</em> increase as much during most of this period.</li>
+        <li><strong>1960s breakthrough:</strong> Agronomists targeted Asia with two key innovations:
+          <ul style="margin-top:6px;font-size:0.83rem;">
+            <li><strong>HYV Wheat</strong> — Norman Borlaug (Nobel Peace Prize): stronger stalks to support heavier seed load, faster maturation (more growing seasons), wider temperature range, natural pest resistance.</li>
+            <li><strong>HYV Rice</strong> — similar properties, targeting Asia's primary staple crop.</li>
+          </ul>
+        </li>
+        <li><strong>Result:</strong> Dramatic productivity increases across Asia. Expanded to other crops (maize, sorghum, cassava). Averted large-scale famine that Malthusian models predicted.</li>
+        <li><strong>Limitations:</strong> Benefits concentrated in Asia (particularly Punjab region of India/Pakistan) — Africa benefited less. HYV varieties require fertiliser and irrigation, which poor farmers lack access to, potentially exacerbating inequality within agriculture.</li>
+      </ul>
+    </div>
+
+    <div class="concept-block example-block">
+      <span class="tag tag-exam">Worked Example</span>
+      <h3>Agricultural Poverty Trap — Risk and Expected Utility</h3>
+      <p>A subsistence farmer considers switching to HYV seeds. Current crop (traditional): yield = 10 with certainty. HYV: yield = 20 with probability 0.6, yield = 3 with probability 0.4. Subsistence minimum = 5.</p>
+      <div class="formula-box">
+        Expected yield (HYV) $= 0.6 \times 20 + 0.4 \times 3 = 12 + 1.2 = 13.2 > 10$ (traditional)<br><br>
+        <strong>But: probability of falling below subsistence with HYV $= 0.4$</strong><br>
+        With traditional seeds: probability of below subsistence $= 0$<br><br>
+        If a farmer uses log utility: $U(y) = \ln(y)$:<br>
+        $EU(\text{HYV}) = 0.6\ln(20) + 0.4\ln(3) = 0.6(3.00) + 0.4(1.10) = 1.80 + 0.44 = 2.24$<br>
+        $U(\text{traditional}) = \ln(10) = 2.30$<br><br>
+        <strong>Risk-averse farmer prefers traditional seeds despite lower expected yield!</strong>
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted);margin-top:8px;">This illustrates why the agricultural poverty trap is rational, not a failure of information. The solution is crop insurance — if the 0.4 probability downside is insured, expected utility of HYV rises above traditional. This is why insurance markets are so critical for agricultural development.</p>
+    </div>
+
+    <div class="concept-block graph-block">
+      <span class="tag" style="background:rgba(232,197,71,0.1);color:var(--accent);border:1px solid rgba(232,197,71,0.3);">Interactive Graph</span>
+      <h3>Green Revolution: Yield vs Inputs</h3>
+      <p>HYV seeds have a steeper response to fertiliser and irrigation inputs than traditional varieties, but also higher variance at low input levels. Adjust input level to see expected yield for HYV vs traditional seeds.</p>
+      <div class="graph-canvas-wrap"><canvas id="chart-green" height="230"></canvas></div>
+      <div class="graph-controls">
+        <div class="graph-ctrl">
+          <label>HYV yield boost (slope)</label>
+          <input type="range" id="gr-boost" min="1.5" max="4" step="0.1" value="2.5" oninput="updateGreen()">
+          <span class="val" id="gr-boost-val">2.5</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>HYV risk (variance ×)</label>
+          <input type="range" id="gr-risk" min="1" max="4" step="0.1" value="2" oninput="updateGreen()">
+          <span class="val" id="gr-risk-val">2.0</span>
+        </div>
+        <div class="graph-ctrl">
+          <label>Subsistence minimum</label>
+          <input type="range" id="gr-sub" min="1" max="6" step="0.5" value="3" oninput="updateGreen()">
+          <span class="val" id="gr-sub-val">3.0</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <span class="graph-stat">HYV expected yield at low input: <span id="gr-low-val">—</span></span>
+        <span class="graph-stat">HYV expected yield at high input: <span id="gr-high-val">—</span></span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end notes-view -->
+
+<!-- ===== FLASHCARDS ===== -->
+<div id="flashcard-view">
+  <div class="section-title">Flashcards</div>
+  <div class="section-subtitle">Click card to reveal answer · Use arrows to navigate</div>
+  <div class="fc-wrapper">
+    <div class="fc-progress" id="fc-progress">Card 1 of 36</div>
+    <div class="fc-card" id="fc-card" onclick="flipCard()">
+      <div class="fc-label" id="fc-label">Question</div>
+      <div class="fc-question" id="fc-question"></div>
+      <div class="fc-answer" id="fc-answer"></div>
+      <div class="fc-hint">click to flip</div>
+    </div>
+    <div class="fc-controls">
+      <button class="fc-btn fc-btn-prev" onclick="fcNav(-1)">← Prev</button>
+      <button class="fc-btn fc-btn-next" onclick="fcNav(1)">Next →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== QUIZ ===== -->
+<div id="quiz-view">
+  <div class="section-title">Practice Quiz</div>
+  <div class="section-subtitle">Test yourself on Topics 1-22 · Answers revealed after selection</div>
+  <div class="quiz-score-bar">
+    <span>Score:</span>
+    <span class="score-num" id="quiz-score">0 / 0</span>
+    <span id="quiz-pct"></span>
+    <button class="quiz-reset-btn" onclick="resetQuiz()">Reset Quiz</button>
+  </div>
+  <div id="quiz-questions"></div>
+</div>
+
+</main>
+
+<script src="app.js"></script>
+</div>
+</body>
+</html>
